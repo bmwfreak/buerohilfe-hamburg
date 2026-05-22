@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Bürohilfe Hamburg baut lokale Büroautomatisierung für kleine Betriebe: digitale PDF-Rechnungen auslesen, Excel-Dateien zusammenführen, E-Mails strukturieren." />
+<title>Bürohilfe Hamburg — Lokale Büroautomatisierung für kleine Betriebe</title>
+<style>
+  :root {
+    --ink: #1f2933;
+    --ink-soft: #52606d;
+    --line: #d8d4c8;
+    --bg: #f8f6f0;
+    --bg-band: #eef3ea;
+    --bg-card: #ffffff;
+    --accent: #4a6b3f;
+    --accent-strong: #31502b;
+    --accent-soft: #e7ede2;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    background: rgba(248, 246, 240, 0.94);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .nav {
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .brand {
+    color: var(--accent-strong);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 16px;
+    font-size: 14px;
+  }
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  header.hero {
+    padding: 70px 0 58px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid {
+    display: grid;
+    gap: 34px;
+    align-items: center;
+  }
+  @media (min-width: 860px) {
+    .hero-grid { grid-template-columns: 1.1fr 0.9fr; }
+  }
+  .eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 46px;
+    line-height: 1.15;
+    margin: 0 0 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  h1 strong { color: var(--accent); }
+  .lead {
+    font-size: 20px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 0 32px;
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: transform 0.08s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+  .proof-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px;
+    box-shadow: 0 18px 40px rgba(49, 80, 43, 0.08);
+  }
+  .proof-panel h2 {
+    font-size: 16px;
+    margin: 0 0 14px;
+  }
+  .proof-flow {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .proof-step {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px;
+    background: #fbfaf7;
+  }
+  .proof-step strong {
+    display: block;
+    font-size: 14px;
+  }
+  .proof-step span {
+    color: var(--ink-soft);
+    display: block;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .demo-output {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+  }
+  .demo-output th,
+  .demo-output td {
+    border-bottom: 1px solid var(--line);
+    padding: 8px 6px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .demo-output th {
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .status-pill {
+    background: var(--accent-soft);
+    border-radius: 999px;
+    color: var(--accent-strong);
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 8px;
+  }
+  .scope-note {
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin: 12px 0 0;
+  }
+  section { padding: 70px 0; border-bottom: 1px solid var(--line); }
+  section h2 {
+    font-size: 30px;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  section .intro { color: var(--ink-soft); margin-bottom: 40px; max-width: 620px; }
+
+  .workflows { display: grid; gap: 24px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .workflows { grid-template-columns: 1fr 1fr; } }
+  .workflow {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px;
+  }
+  .workflow h3 { margin: 0 0 12px; font-size: 19px; }
+  .workflow .save {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+    margin: 14px 0 0;
+  }
+  .workflow p { margin: 0 0 8px; color: var(--ink-soft); font-size: 15px; }
+
+  .packages { display: grid; gap: 20px; grid-template-columns: 1fr; margin-top: 24px; }
+  @media (min-width: 720px) { .packages { grid-template-columns: 1fr 1fr 1fr; } }
+  .pkg {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .pkg.feature { border-color: var(--accent); }
+  .pkg h3 { margin: 0 0 6px; font-size: 18px; }
+  .pkg .price { font-size: 26px; font-weight: 700; margin: 8px 0 4px; }
+  .pkg .price small { font-size: 14px; color: var(--ink-soft); font-weight: 400; }
+  .pkg ul { list-style: none; padding: 0; margin: 16px 0 24px; font-size: 15px; color: var(--ink-soft); }
+  .pkg li { padding-left: 18px; position: relative; margin-bottom: 8px; }
+  .pkg li::before { content: "·"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+  .pkg .btn { margin-top: auto; text-align: center; }
+
+  .trust { display: grid; gap: 18px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .trust { grid-template-columns: 1fr 1fr; } }
+  .trust-item {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 16px;
+  }
+  .trust-item h4 { margin: 0 0 4px; font-size: 16px; }
+  .trust-item p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+  .faq details {
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+  }
+  .faq summary { cursor: pointer; font-weight: 600; }
+  .faq p { color: var(--ink-soft); margin: 12px 0 0; }
+
+  .contact {
+    background: var(--accent-soft);
+    border-radius: 8px;
+    padding: 36px;
+    text-align: center;
+  }
+  .contact h2 { margin-top: 0; }
+  .contact .email { font-size: 22px; font-weight: 600; color: var(--accent); }
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 22px;
+  }
+  .fineprint {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 16px 0 0;
+  }
+
+  footer {
+    padding: 30px 0 50px;
+    color: var(--ink-soft);
+    font-size: 14px;
+    text-align: center;
+  }
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 32px; }
+    .lead { font-size: 17px; }
+    section { padding: 50px 0; }
+    .nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+    .nav-links { justify-content: flex-start; }
+    .demo-output { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">Bürohilfe Hamburg</a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#workflows">Workflows</a>
+      <a href="#pakete">Preise</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Lokale Büroautomatisierung · Hamburg</p>
+        <h1>Bürohilfe Hamburg</h1>
+        <p class="lead">Kleine Werkzeuge für Büroarbeit, die in kleinen Betrieben jede Woche Zeit kostet: digitale PDF-Rechnungen auslesen, Excel-Dateien zusammenführen, E-Mails strukturieren. Ohne große Cloud-Lösung, ohne Software-Abo, ohne komplizierte IT-Einführung.</p>
+        <div class="cta-row">
+          <a href="#kontakt" class="btn btn-primary">Kostenlose Ersteinschätzung</a>
+          <a href="#pakete" class="btn btn-secondary">Pakete ansehen</a>
+        </div>
+      </div>
+      <div class="proof-panel" aria-label="Beispiel Workflow">
+        <h2>Beispiel: PDF-Rechnungen in Excel</h2>
+        <div class="proof-flow">
+          <div class="proof-step">
+            <strong>1. PDFs in lokalen Ordner legen</strong>
+            <span>Keine Cloud, kein Login, kein fremdes Portal.</span>
+          </div>
+          <div class="proof-step">
+            <strong>2. Workflow per Doppelklick starten</strong>
+            <span>Textebene lesen, Felder erkennen, Unsicherheiten markieren.</span>
+          </div>
+          <div class="proof-step">
+            <strong>3. Ergebnis in Excel prüfen</strong>
+            <span>Eine Zeile pro Rechnung, nachvollziehbar mit Rohtext-Dateien.</span>
+          </div>
+        </div>
+        <table class="demo-output">
+          <thead>
+            <tr><th>Feld</th><th>Beispiel</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Datum</td><td>22.05.2026</td><td><span class="status-pill">hoch</span></td></tr>
+            <tr><td>Brutto</td><td>1.844,50 €</td><td><span class="status-pill">hoch</span></td></tr>
+            <tr><td>Nummer</td><td>RG-2026-014</td><td><span class="status-pill">mittel</span></td></tr>
+          </tbody>
+        </table>
+        <p class="scope-note">Start-Scope: digital erzeugte PDFs mit Text-Layer. Gescannte Belege werden erst nach Bedarf erweitert.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="workflows">
+  <div class="container">
+    <h2>Vier kleine Workflows, die heute schon Zeit sparen</h2>
+    <p class="intro">Beispiele aus dem Alltag kleiner Betriebe in Handwerk, Hausverwaltung und Planungsbüros. Jeder Workflow läuft lokal auf Ihrem Rechner oder in Ihrem Netzwerk und ist als Festpreis-Pilot lieferbar.</p>
+
+    <div class="workflows">
+      <div class="workflow">
+        <h3>PDF-Ordner → Excel-Liste</h3>
+        <p>Digitale Rechnungen, Lieferscheine oder Angebote mit Text-Layer landen in einem Ordner. Ein kleines Tool liest die wichtigsten Daten aus und trägt sie automatisch in eine Excel-Liste ein.</p>
+        <p>Unsichere Erkennungen werden markiert — Sie prüfen nur, was geprüft werden muss.</p>
+        <p class="save">Spart ø 6 h / Monat</p>
+      </div>
+
+      <div class="workflow">
+        <h3>Excel-Konsolidierung & Wochenübersicht</h3>
+        <p>Mehrere Quell-Tabellen werden täglich oder wöchentlich zu einer übersichtlichen Datei zusammengeführt. Inklusive Auffälligkeits-Sheet und kleinem KPI-Überblick.</p>
+        <p class="save">Spart ø 10 h / Monat</p>
+      </div>
+
+      <div class="workflow">
+        <h3>E-Mail-Sortierung als Excel-Protokoll</h3>
+        <p>Eingangs-Mails werden in einen Ordner exportiert, automatisch klassifiziert und als Excel-Liste protokolliert — Absender, Thema, Kategorie, Status. Ein guter Einstieg in die E-Mail-Strukturierung ohne IMAP-Anbindung.</p>
+        <p class="save">Spart Zeit beim Wochenrückblick</p>
+      </div>
+
+      <div class="workflow">
+        <h3>Individuell auf Ihren Prozess zugeschnitten</h3>
+        <p>Eine Mischung aus mehreren Quellen, ein Spezial-PDF-Typ, eine bestehende Ordnerstruktur, die zu erhalten ist — wir schauen gemeinsam, was klein und lokal lösbar ist.</p>
+        <p class="save">Aufwand-basiert, Schätzung vorab</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pakete">
+  <div class="container">
+    <h2>Pakete &amp; Preise</h2>
+    <p class="intro">Klare Festpreise für die ersten beiden Schritte. Erst danach entscheidet sich, ob eine größere Umsetzung Sinn ergibt.</p>
+
+    <div class="packages">
+      <div class="pkg">
+        <h3>Prozesscheck</h3>
+        <div class="price">99 € <small>netto · pauschal</small></div>
+        <ul>
+          <li>60-min Termin (online oder vor Ort)</li>
+          <li>Identifikation der drei zeitstärksten Prozesse</li>
+          <li>Schriftlicher Bericht als PDF</li>
+          <li>Empfehlung für ersten kleinen Workflow</li>
+          <li>Ohne weitere Verpflichtung</li>
+        </ul>
+        <a href="#kontakt" class="btn btn-secondary">Termin anfragen</a>
+      </div>
+
+      <div class="pkg feature">
+        <h3>Pilot-Workflow</h3>
+        <div class="price">ab 350 € <small>netto · Festpreis</small></div>
+        <ul>
+          <li>Ein kleiner Workflow, lokal lauffähig</li>
+          <li>Läuft auf Ihrem Rechner oder im Netzwerk</li>
+          <li>Bedienung per Doppelklick oder Verknüpfung</li>
+          <li>Übergabe-Termin mit Live-Demo</li>
+          <li>2 Wochen Hotfix-Support</li>
+        </ul>
+        <a href="#kontakt" class="btn btn-primary">Pilot besprechen</a>
+      </div>
+
+      <div class="pkg">
+        <h3>Individuelle Umsetzung</h3>
+        <div class="price">95 € / h <small>netto · nach Aufwand</small></div>
+        <ul>
+          <li>Schätzung schriftlich vor Beginn</li>
+          <li>Wöchentliche Status-Updates</li>
+          <li>Abnahme in Etappen</li>
+          <li>Größere Workflows, mehrere Quellen</li>
+        </ul>
+        <a href="#kontakt" class="btn btn-secondary">Anfrage stellen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vertrauen">
+  <div class="container">
+    <h2>Womit Sie rechnen können</h2>
+    <div class="trust">
+      <div class="trust-item">
+        <h4>Ihre Daten bleiben bei Ihnen</h4>
+        <p>Die Workflows laufen lokal auf Ihrem Rechner oder in Ihrer Ordnerstruktur. Daten verlassen das Haus nicht ohne ausdrückliche Absprache. Keine Pflicht zur Cloud-Nutzung.</p>
+      </div>
+      <div class="trust-item">
+        <h4>Kein Software-Abo</h4>
+        <p>Keine wiederkehrenden Lizenzgebühren, keine Pro-User-Kosten. Nach der Übergabe gehört der Workflow Ihnen.</p>
+      </div>
+      <div class="trust-item">
+        <h4>Klein und verständlich</h4>
+        <p>Ein Workflow, eine konkrete Aufgabe. Kein großes IT-Projekt, keine Plattform-Einführung. Bedienung mit Doppelklick.</p>
+      </div>
+      <div class="trust-item">
+        <h4>Lokal in Hamburg</h4>
+        <p>Vor-Ort-Termine in Hamburg und Umgebung möglich. Laufender Support remote über Telefon und E-Mail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="container">
+    <h2>Häufige Fragen</h2>
+
+    <details>
+      <summary>Brauche ich für den Workflow eine Cloud-Lösung?</summary>
+      <p>Nein. Die Workflows sind so gebaut, dass sie auf einem normalen Windows- oder Mac-Rechner lokal laufen. Eine Cloud kommt nur dann ins Spiel, wenn Sie das ausdrücklich möchten oder ein Datenvolumen das sinnvoll macht — und dann sprechen wir vorher darüber.</p>
+    </details>
+
+    <details>
+      <summary>Was kostet der laufende Betrieb nach dem Pilot?</summary>
+      <p>In der Regel nichts. Der Workflow ist nach der Übergabe ein normales kleines Programm, das auf Ihrem Rechner liegt. Keine Lizenz, kein Abo.</p>
+    </details>
+
+    <details>
+      <summary>Wie schnell ist ein Pilot einsatzbereit?</summary>
+      <p>Nach dem Erstgespräch üblicherweise 1–2 Wochen bis zur Übergabe. Bei komplexeren Workflows entsprechend nach Aufwandsschätzung.</p>
+    </details>
+
+    <details>
+      <summary>Funktioniert das auch mit gescannten Rechnungen?</summary>
+      <p>Der erste Pilot ist bewusst auf digital erzeugte PDFs mit Text-Layer ausgelegt. Gescannte Belege und reine Bild-PDFs sind als Erweiterung möglich, werden aber erst nach einem Test mit Ihren Dokumenttypen eingeplant.</p>
+    </details>
+
+    <details>
+      <summary>Was passiert mit meinen Daten?</summary>
+      <p>Während der Umsetzung sehe ich nur das, was Sie mir freiwillig geben — meist anonymisierte Beispiel-Dokumente. Im laufenden Betrieb verlassen Ihre Daten Ihr Haus nicht. Bei sensiblen Bereichen (z. B. Hausverwaltung) sprechen wir die Spielregeln vorher in Ruhe durch.</p>
+    </details>
+
+    <details>
+      <summary>Was, wenn das System einen Fehler macht?</summary>
+      <p>Jeder Workflow markiert unsichere Stellen für die manuelle Prüfung. Es wird nichts ungefragt versendet oder gebucht. Sie behalten die letzte Kontrolle — der Workflow nimmt nur die Tipparbeit ab.</p>
+    </details>
+
+    <details>
+      <summary>Brauche ich IT-Kenntnisse?</summary>
+      <p>Nein. Sie bekommen eine Verknüpfung auf den Desktop oder einen Ordner, in den Sie Dateien legen. Mehr nicht. Die Anleitung passt auf eine Seite.</p>
+    </details>
+
+    <details>
+      <summary>Kann das später an DATEV oder Lexware angebunden werden?</summary>
+      <p>Ja, wenn das gewünscht ist. Im ersten Pilot liefere ich saubere CSV- oder Excel-Exporte, die sich in DATEV, Lexware oder andere Programme importieren lassen. Eine direkte API-Anbindung ist als Erweiterung möglich (Paket 3, nach Aufwand).</p>
+    </details>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="container">
+    <div class="contact">
+      <h2>Kostenlose Ersteinschätzung</h2>
+      <p>Schreiben Sie kurz, welcher Büroprozess bei Ihnen aktuell am meisten Zeit kostet — ich antworte innerhalb eines Werktags.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:info@buerohilfe-hamburg.de">info@buerohilfe-hamburg.de</a>
+        <a class="btn btn-secondary" href="tel:+491736762711">0173 6762711</a>
+      </div>
+      <p class="fineprint">Vor-Ort-Termine in Hamburg und Umgebung nach Absprache. Telefonische Erstgespräche Mo-Fr 09:00-17:00 Uhr.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Bürohilfe Hamburg · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
