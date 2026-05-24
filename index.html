@@ -257,13 +257,170 @@
   }
   footer a { color: var(--ink-soft); }
 
+  /* Trust-Strip unter den Hero-CTAs */
+  .trust-strip {
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .trust-strip li {
+    position: relative;
+    padding-left: 22px;
+  }
+  .trust-strip li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Proof-Panel: Vorher/Nachher-Karten */
+  .proof-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  .proof-panel h2 {
+    font-size: 19px;
+    line-height: 1.3;
+    margin: 0 0 16px;
+  }
+  .proof-panel h2 strong { color: var(--accent-strong); }
+  .vorher-nachher {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .vn-card {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 14px;
+    background: #fbfaf7;
+  }
+  .vn-card strong {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .vn-vorher { border-color: #d8b4b4; background: #faf3f0; }
+  .vn-vorher strong { color: #8a3a2c; }
+  .vn-nachher { border-color: var(--accent); background: var(--accent-soft); }
+  .vn-nachher strong { color: var(--accent-strong); }
+  .vn-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px;
+    font-size: 14px;
+  }
+  .vn-card li { padding: 3px 0; }
+  .vn-stat {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+  }
+  .vn-stat small {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    margin-left: 4px;
+  }
+  .proof-savings {
+    text-align: center;
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    padding: 14px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .proof-savings strong { font-size: 22px; }
+  .proof-savings small {
+    display: block;
+    font-size: 12px;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+
+  /* Hero-Workflow-Karte in der Workflows-Sektion */
+  .hero-workflow {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 32px;
+  }
+  .hero-workflow h3 { margin: 0 0 12px; font-size: 22px; }
+  .hero-workflow p { margin: 0 0 12px; color: var(--ink-soft); font-size: 16px; }
+  .hero-workflow .save {
+    color: var(--accent-strong);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 16px 0 20px;
+  }
+  .also-headline {
+    font-size: 17px;
+    margin: 8px 0 12px;
+    color: var(--ink-soft);
+  }
+  .also-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .also-list li {
+    padding: 10px 0 10px 22px;
+    position: relative;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .also-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .also-list li:last-child { border-bottom: 0; }
+  .also-list strong { color: var(--ink); }
+
+  /* Großer CTA-Button für die Kontakt-Sektion */
+  .btn-large {
+    padding: 18px 28px;
+    font-size: 19px;
+  }
+
   @media (max-width: 600px) {
-    h1 { font-size: 32px; }
+    h1 { font-size: 30px; }
     .lead { font-size: 17px; }
     section { padding: 50px 0; }
     .nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
     .nav-links { justify-content: flex-start; }
     .demo-output { font-size: 12px; }
+    .cta-row .btn { width: 100%; text-align: center; }
+    .vorher-nachher { grid-template-columns: 1fr; }
+    .proof-panel h2 { font-size: 17px; }
+    .vn-stat { font-size: 19px; }
+    .proof-savings strong { font-size: 20px; }
+    .hero-workflow { padding: 22px 18px; }
+    .hero-workflow h3 { font-size: 19px; }
+    header.hero { padding: 40px 0 36px; }
   }
 </style>
 </head>
@@ -285,41 +442,43 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Lokale Büroautomatisierung · Hamburg</p>
-        <h1>Bürohilfe Hamburg</h1>
-        <p class="lead">Kleine Werkzeuge für Büroarbeit, die in kleinen Betrieben jede Woche Zeit kostet: digitale PDF-Rechnungen auslesen, Excel-Dateien zusammenführen, E-Mails strukturieren. Ohne große Cloud-Lösung, ohne Software-Abo, ohne komplizierte IT-Einführung.</p>
+        <p class="eyebrow">Lokal in Hamburg · Festpreis · Kein Abo</p>
+        <h1>Weniger Tipparbeit im Büro.<br><strong>Garantiert in 2 Wochen.</strong></h1>
+        <p class="lead">Ich baue kleine lokale Tools für Hamburger Handwerksbetriebe — damit Rechnungen, Listen und Mails sich nicht mehr abtippen lassen.</p>
         <div class="cta-row">
-          <a href="#kontakt" class="btn btn-primary">Kostenlose Ersteinschätzung</a>
-          <a href="#pakete" class="btn btn-secondary">Pakete ansehen</a>
+          <a href="tel:+491736762711" class="btn btn-primary">📞 0173 6762711 — jetzt anrufen</a>
+          <a href="mailto:info@buerohilfe-hamburg.de" class="btn btn-secondary">✉️ Per E-Mail melden</a>
         </div>
+        <ul class="trust-strip">
+          <li>Daten bleiben bei euch</li>
+          <li>Kein Abo, kein Cloud-Zwang</li>
+          <li>Festpreis ab 99 €</li>
+        </ul>
       </div>
-      <div class="proof-panel" aria-label="Beispiel Workflow">
-        <h2>Beispiel: PDF-Rechnungen in Excel</h2>
-        <div class="proof-flow">
-          <div class="proof-step">
-            <strong>1. PDFs in lokalen Ordner legen</strong>
-            <span>Keine Cloud, kein Login, kein fremdes Portal.</span>
+      <div class="proof-panel" aria-label="Beispielrechnung">
+        <p class="proof-eyebrow">Echtes Beispiel</p>
+        <h2>150 Rechnungen im Monat?<br>Das sind <strong>7,5 Stunden</strong> Tipparbeit.</h2>
+        <div class="vorher-nachher">
+          <div class="vn-card vn-vorher">
+            <strong>Vorher</strong>
+            <ul>
+              <li>PDFs einzeln öffnen</li>
+              <li>Daten abtippen</li>
+              <li>In Excel kopieren</li>
+            </ul>
+            <p class="vn-stat">7,5 h<small>/ Monat</small></p>
           </div>
-          <div class="proof-step">
-            <strong>2. Workflow per Doppelklick starten</strong>
-            <span>Textebene lesen, Felder erkennen, Unsicherheiten markieren.</span>
-          </div>
-          <div class="proof-step">
-            <strong>3. Ergebnis in Excel prüfen</strong>
-            <span>Eine Zeile pro Rechnung, nachvollziehbar mit Rohtext-Dateien.</span>
+          <div class="vn-card vn-nachher">
+            <strong>Nachher</strong>
+            <ul>
+              <li>PDFs in Ordner legen</li>
+              <li>Doppelklick „Start"</li>
+              <li>Excel ist fertig</li>
+            </ul>
+            <p class="vn-stat">~1 h<small>/ Monat</small></p>
           </div>
         </div>
-        <table class="demo-output">
-          <thead>
-            <tr><th>Feld</th><th>Beispiel</th><th>Status</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Datum</td><td>22.05.2026</td><td><span class="status-pill">hoch</span></td></tr>
-            <tr><td>Brutto</td><td>1.844,50 €</td><td><span class="status-pill">hoch</span></td></tr>
-            <tr><td>Nummer</td><td>RG-2026-014</td><td><span class="status-pill">mittel</span></td></tr>
-          </tbody>
-        </table>
-        <p class="scope-note">Start-Scope: digital erzeugte PDFs mit Text-Layer. Gescannte Belege werden erst nach Bedarf erweitert.</p>
+        <p class="proof-savings">≈ <strong>210 €</strong> weniger Lohnkosten / Monat<br><small>bei 35 €/h interner Kostensatz</small></p>
       </div>
     </div>
   </div>
@@ -327,35 +486,22 @@
 
 <section id="workflows">
   <div class="container">
-    <h2>Vier kleine Workflows, die heute schon Zeit sparen</h2>
-    <p class="intro">Beispiele aus dem Alltag kleiner Betriebe in Handwerk, Hausverwaltung und Planungsbüros. Jeder Workflow läuft lokal auf Ihrem Rechner oder in Ihrem Netzwerk und ist als Festpreis-Pilot lieferbar.</p>
+    <h2>Der typische erste Workflow</h2>
+    <p class="intro">Funktioniert für die meisten Handwerksbetriebe ab dem ersten Tag — als Festpreis-Pilot.</p>
 
-    <div class="workflows">
-      <div class="workflow">
-        <h3>PDF-Ordner → Excel-Liste</h3>
-        <p>Digitale Rechnungen, Lieferscheine oder Angebote mit Text-Layer landen in einem Ordner. Ein kleines Tool liest die wichtigsten Daten aus und trägt sie automatisch in eine Excel-Liste ein.</p>
-        <p>Unsichere Erkennungen werden markiert — Sie prüfen nur, was geprüft werden muss.</p>
-        <p class="save">Spart ø 6 h / Monat</p>
-      </div>
-
-      <div class="workflow">
-        <h3>Excel-Konsolidierung & Wochenübersicht</h3>
-        <p>Mehrere Quell-Tabellen werden täglich oder wöchentlich zu einer übersichtlichen Datei zusammengeführt. Inklusive Auffälligkeits-Sheet und kleinem KPI-Überblick.</p>
-        <p class="save">Spart ø 10 h / Monat</p>
-      </div>
-
-      <div class="workflow">
-        <h3>E-Mail-Sortierung als Excel-Protokoll</h3>
-        <p>Eingangs-Mails werden in einen Ordner exportiert, automatisch klassifiziert und als Excel-Liste protokolliert — Absender, Thema, Kategorie, Status. Ein guter Einstieg in die E-Mail-Strukturierung ohne IMAP-Anbindung.</p>
-        <p class="save">Spart Zeit beim Wochenrückblick</p>
-      </div>
-
-      <div class="workflow">
-        <h3>Individuell auf Ihren Prozess zugeschnitten</h3>
-        <p>Eine Mischung aus mehreren Quellen, ein Spezial-PDF-Typ, eine bestehende Ordnerstruktur, die zu erhalten ist — wir schauen gemeinsam, was klein und lokal lösbar ist.</p>
-        <p class="save">Aufwand-basiert, Schätzung vorab</p>
-      </div>
+    <div class="hero-workflow">
+      <h3>PDF-Rechnungen → Excel-Liste</h3>
+      <p>Rechnungen, Lieferscheine oder Angebote landen als PDF in einem Ordner. Ein kleines Tool liest die wichtigsten Felder aus und trägt sie automatisch in eine Excel-Liste ein. Unsichere Erkennungen werden markiert — ihr prüft nur, was wirklich geprüft werden muss.</p>
+      <p class="save">Bei 150 PDFs/Monat: ca. 6 Stunden gespart = ~210 € interne Kosten.</p>
+      <a href="tel:+491736762711" class="btn btn-primary">📞 Klingt nach euch? Ruf an: 0173 6762711</a>
     </div>
+
+    <h3 class="also-headline">Auch lokal lösbar:</h3>
+    <ul class="also-list">
+      <li><strong>Excel-Konsolidierung & Wochenübersicht</strong> — mehrere Listen automatisch zu einer zusammenführen, mit Auffälligkeits-Markierung.</li>
+      <li><strong>E-Mail-Protokoll</strong> — Eingangsmails als Excel-Liste mit Absender, Thema, Kategorie, Status.</li>
+      <li><strong>Individuell</strong> — Spezialfälle und mehrere verknüpfte Quellen nach Aufwandsschätzung.</li>
+    </ul>
   </div>
 </section>
 
@@ -479,13 +625,13 @@
 <section id="kontakt">
   <div class="container">
     <div class="contact">
-      <h2>Kostenlose Ersteinschätzung</h2>
-      <p>Schreiben Sie kurz, welcher Büroprozess bei Ihnen aktuell am meisten Zeit kostet — ich antworte innerhalb eines Werktags.</p>
+      <h2>Einfach anrufen</h2>
+      <p>Ein Anruf reicht. Kein Formular, kein Login. Ich schau mir euren Prozess an und sag, ob's was Kleines zu holen gibt — oder ob's bei euch eh schon rund läuft.</p>
       <div class="contact-actions">
-        <a class="btn btn-primary" href="mailto:info@buerohilfe-hamburg.de">info@buerohilfe-hamburg.de</a>
-        <a class="btn btn-secondary" href="tel:+491736762711">0173 6762711</a>
+        <a class="btn btn-primary btn-large" href="tel:+491736762711">📞 0173 6762711</a>
+        <a class="btn btn-secondary" href="mailto:info@buerohilfe-hamburg.de">✉️ info@buerohilfe-hamburg.de</a>
       </div>
-      <p class="fineprint">Vor-Ort-Termine in Hamburg und Umgebung nach Absprache. Telefonische Erstgespräche Mo-Fr 09:00-17:00 Uhr.</p>
+      <p class="fineprint">Mo–Fr 09:00–17:00 Uhr · Vor-Ort-Termine in Hamburg nach Absprache.</p>
     </div>
   </div>
 </section>
