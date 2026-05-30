@@ -1,2 +1,14 @@
-# Local Netlify folder
-.netlify
+# OS
+Thumbs.db
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Cloudflare Wrangler CLI state
+.wrangler/
+
+# Legacy: Netlify CLI (Repo wird zu Cloudflare migriert)
+.netlify/
