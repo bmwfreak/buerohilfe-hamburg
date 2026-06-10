@@ -29,6 +29,9 @@
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
 
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
 # sitemap und robots — kürzer cachen
 /sitemap.xml
   Cache-Control: public, max-age=86400
