@@ -7,6 +7,9 @@
 <meta name="theme-color" content="#0f172a" />
 <title>Bürohilfe Hamburg — Lokale Büroautomatisierung für kleine Betriebe</title>
 <link rel="canonical" href="https://buerohilfe-hamburg.de/" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="alternate icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
 <!-- Self-hosted Inter (DSGVO-konform, kein Google-Server zur Laufzeit) -->
 <link rel="preload" href="fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
@@ -14,7 +17,6 @@
 <!-- Open Graph -->
 <meta property="og:title" content="Bürohilfe Hamburg — Lokale Büroautomatisierung" />
 <meta property="og:description" content="Kleine lokale Tools für Hamburger Handwerksbetriebe: PDF-Rechnungen auslesen, Excel-Listen pflegen, E-Mails strukturieren. Ohne Cloud, ohne Abo, Festpreis ab 99 €." />
-<!-- TODO: og-image.jpg 1200x630 noch erstellen (Screenshot der Hero o.ä.) -->
 <meta property="og:image" content="https://buerohilfe-hamburg.de/og-image.jpg" />
 <meta property="og:image:alt" content="Bürohilfe Hamburg — lokale Büroautomatisierung für kleine Betriebe" />
 <meta property="og:url" content="https://buerohilfe-hamburg.de/" />
@@ -36,6 +38,18 @@
   "name": "Bürohilfe Hamburg",
   "description": "Lokale Büroautomatisierung für kleine Handwerks- und Dienstleistungsbetriebe in Hamburg: PDF-Rechnungen auslesen, Excel-Konsolidierung, E-Mail-Protokolle. Festpreise, ohne Cloud, ohne Abo.",
   "url": "https://buerohilfe-hamburg.de/",
+  "image": "https://buerohilfe-hamburg.de/og-image.jpg",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://buerohilfe-hamburg.de/favicon.svg",
+    "width": 64,
+    "height": 64
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Emre Küllüoğlu",
+    "jobTitle": "Inhaber"
+  },
   "telephone": "+49-173-6762711",
   "email": "info@buerohilfe-hamburg.de",
   "priceRange": "€€",
@@ -651,6 +665,60 @@
   .trust-item h4 { font-size: 17px; margin: 2px 0 6px; }
   .trust-item p { margin: 0; font-size: 15px; color: var(--ink-soft); }
 
+  /* ---------- Referenz (Quote) ---------- */
+  .quote-card {
+    max-width: 800px; margin: 0 auto; text-align: center;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 56px 48px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.04);
+  }
+  .quote-mark {
+    display: block; font-size: 52px; line-height: 0.6; font-weight: 800;
+    color: var(--accent); margin-bottom: 22px; font-family: Georgia, serif;
+  }
+  .quote-card blockquote {
+    margin: 0 0 32px; font-size: clamp(19px, 2.6vw, 23px); line-height: 1.5;
+    color: var(--ink); font-weight: 600; letter-spacing: -0.015em;
+  }
+  .quote-card figcaption {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+  }
+  .quote-avatar {
+    flex: none; width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 16px;
+  }
+  .quote-id { text-align: left; }
+  .quote-id b { display: block; color: var(--ink); font-size: 15.5px; }
+  .quote-id span { font-size: 13.5px; color: var(--ink-muted); }
+
+  /* ---------- Über mich ---------- */
+  .about-card {
+    display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.04);
+  }
+  @media (min-width: 820px) { .about-card { grid-template-columns: 280px 1fr; } }
+  .about-id { display: grid; justify-items: center; gap: 4px; text-align: center; }
+  .about-avatar {
+    width: 104px; height: 104px; border-radius: 28px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #fff; display: grid; place-items: center;
+    font-weight: 800; font-size: 36px; letter-spacing: -0.02em;
+    box-shadow: 0 10px 24px -8px rgba(37,99,235,0.5);
+    margin-bottom: 12px;
+  }
+  .about-id b { color: var(--ink); font-size: 18px; }
+  .about-role { font-size: 14px; color: var(--ink-muted); }
+  .about-text .kicker {
+    display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .about-text h2 { font-size: clamp(24px, 3vw, 30px); margin: 0 0 14px; }
+  .about-text p { margin: 0 0 26px; }
+  .about-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+
   /* ---------- FAQ ---------- */
   .faq-list { max-width: 800px; margin: 0 auto; }
   .faq-item {
@@ -721,7 +789,9 @@
     .wf-text, .wf-side { padding: 28px; }
     .wf-side { border-left: none; border-top: 1px solid var(--line); }
     .contact-band { padding: 44px 24px; }
-    .hero-cta .btn, .contact-actions .btn { width: 100%; }
+    .hero-cta .btn, .contact-actions .btn, .about-cta .btn { width: 100%; }
+    .quote-card { padding: 36px 24px; }
+    .about-card { padding: 32px 24px; }
   }
 </style>
 </head>
@@ -770,7 +840,10 @@
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             0173 6762711
           </a>
-          <a href="mailto:info@buerohilfe-hamburg.de" class="btn btn-ghost-light btn-lg">Per E-Mail melden</a>
+          <a href="https://wa.me/491736762711?text=Moin!%20Ich%20interessiere%20mich%20f%C3%BCr%20einen%20Workflow." class="btn btn-ghost-light btn-lg">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            WhatsApp
+          </a>
         </div>
         <div class="hero-trust reveal-up d5">
           <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> DSGVO-konform</span>
@@ -957,8 +1030,29 @@
   </div>
 </section>
 
+<!-- REFERENZ -->
+<section id="referenz" class="section-white">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Referenz</span>
+      <h2>Was Kunden sagen</h2>
+    </div>
+    <figure class="quote-card">
+      <span class="quote-mark" aria-hidden="true">„</span>
+      <blockquote>Emre hat unsere Website gebaut und alles drumherum eingerichtet — unkompliziert, schnell und zum Festpreis. Genau so stellt man sich Zusammenarbeit vor.</blockquote>
+      <figcaption>
+        <span class="quote-avatar" aria-hidden="true">MS</span>
+        <div class="quote-id">
+          <b>Mehmet Sert</b>
+          <span>Inhaber, Maler Sert GmbH · <a href="https://maler-sert.de" target="_blank" rel="noopener">maler-sert.de</a></span>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- VERTRAUEN -->
-<section class="section-white">
+<section class="section-alt">
   <div class="container">
     <div class="section-head">
       <span class="kicker">Womit ihr rechnen könnt</span>
@@ -980,6 +1074,34 @@
       <div class="trust-item">
         <span class="trust-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <div><h4>Lokal in Hamburg</h4><p>Vor-Ort-Termine in Hamburg und Umgebung möglich. Laufender Support per Telefon und E-Mail.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER MICH -->
+<section id="ueber-mich" class="section-white">
+  <div class="container">
+    <div class="about-card">
+      <div class="about-id">
+        <span class="about-avatar" aria-hidden="true">EK</span>
+        <b>Emre Küllüoğlu</b>
+        <span class="about-role">Inhaber, Bürohilfe Hamburg</span>
+      </div>
+      <div class="about-text">
+        <span class="kicker">Wer ist da am Telefon?</span>
+        <h2>Ihr sprecht direkt mit dem, der's baut</h2>
+        <p>Kein Vertrieb, kein Ticketsystem, keine Warteschleife. Ich schaue mir euren Prozess persönlich an, baue den Workflow selbst — und bin auch nach der Übergabe euer direkter Ansprechpartner, wenn mal was klemmt.</p>
+        <div class="about-cta">
+          <a href="tel:+491736762711" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            0173 6762711
+          </a>
+          <a href="https://wa.me/491736762711?text=Moin!%20Ich%20interessiere%20mich%20f%C3%BCr%20einen%20Workflow." class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            WhatsApp schreiben
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -1040,6 +1162,10 @@
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           0173 6762711
         </a>
+        <a class="btn btn-ghost-light btn-lg" href="https://wa.me/491736762711?text=Moin!%20Ich%20interessiere%20mich%20f%C3%BCr%20einen%20Workflow.">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
         <a class="btn btn-ghost-light btn-lg" href="mailto:info@buerohilfe-hamburg.de">info@buerohilfe-hamburg.de</a>
       </div>
       <p class="contact-fine">Mo–Fr 09:00–17:00 Uhr · Vor-Ort-Termine in Hamburg nach Absprache.</p>
@@ -1057,6 +1183,11 @@
         <a href="tel:+491736762711">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           0173 6762711
+        </a>
+        <span class="sep">·</span>
+        <a href="https://wa.me/491736762711?text=Moin!%20Ich%20interessiere%20mich%20f%C3%BCr%20einen%20Workflow.">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
         </a>
         <span class="sep">·</span>
         <a href="mailto:info@buerohilfe-hamburg.de">
