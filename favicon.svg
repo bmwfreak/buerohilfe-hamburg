@@ -8,5 +8,5 @@
   <rect width="64" height="64" rx="14" fill="url(#g)"/>
   <text x="32" y="34" text-anchor="middle" dominant-baseline="central"
         font-family="Inter, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif"
-        font-size="38" font-weight="800" fill="#ffffff">B</text>
+        font-size="27" font-weight="800" letter-spacing="-1.5" fill="#ffffff">SA</text>
 </svg>

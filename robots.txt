@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://buerohilfe-hamburg.de/sitemap.xml
+Sitemap: https://systemic-automation.de/sitemap.xml
