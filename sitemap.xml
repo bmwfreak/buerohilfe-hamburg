@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://buerohilfe-hamburg.de/</loc>
+    <loc>https://systemic-automation.de/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://buerohilfe-hamburg.de/impressum.html</loc>
+    <loc>https://systemic-automation.de/impressum.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://buerohilfe-hamburg.de/datenschutz.html</loc>
+    <loc>https://systemic-automation.de/datenschutz.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>

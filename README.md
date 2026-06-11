@@ -1,5 +1,6 @@
-# buerohilfe-hamburg
+# systemic-automation
 
-Statische Website fuer Buerohilfe Hamburg. Netlify deployt den Branch `main`.
+Statische Website für Systemic Automation (Inhaber Emre Küllüoğlu).
+Cloudflare Pages deployt den Branch `main` via GitHub Actions.
 
-Letzter Auto-Deploy-Test: 2026-05-23.
+Domain: systemic-automation.de (vormals buerohilfe-hamburg.de).
