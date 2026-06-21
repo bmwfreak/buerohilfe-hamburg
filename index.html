@@ -108,6 +108,23 @@
       },
       {
         "@type": "Offer",
+        "price": "1900",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "1900",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false,
+          "description": "Festpreis ab 1.900 € netto nach Spezifikation"
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Komplett-Workflow",
+          "description": "Mehrere wiederkehrende Büroprozesse end-to-end automatisiert: mehrere Datenquellen (PDF, Excel, E-Mail), Einrichtung und Einweisung des Teams, DATEV-/Lexware-Export inklusive, 3 Monate Support nach Übergabe."
+        }
+      },
+      {
+        "@type": "Offer",
         "price": "95",
         "priceCurrency": "EUR",
         "priceSpecification": {
@@ -613,7 +630,7 @@
   }
   @media (min-width: 860px) {
     .pricing {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
       align-items: start;
     }
   }
@@ -1086,6 +1103,22 @@
       </div>
 
       <div class="price-card">
+        <span class="price-badge">Meiste Zeitersparnis</span>
+        <h3>Komplett-Workflow</h3>
+        <p class="price-sub">Mehrere Prozesse in einem Rutsch</p>
+        <div class="price-amount"><span class="num">ab 1.900 €</span><span class="unit">netto</span></div>
+        <p class="price-note">Festpreis · nach Spezifikation</p>
+        <ul>
+          <li><span class="ck">✓</span> Mehrere Abläufe end-to-end automatisiert</li>
+          <li><span class="ck">✓</span> Mehrere Datenquellen (PDF, Excel, E-Mail)</li>
+          <li><span class="ck">✓</span> Einrichtung &amp; Einweisung eures Teams</li>
+          <li><span class="ck">✓</span> DATEV-/Lexware-Export inklusive</li>
+          <li><span class="ck">✓</span> 3 Monate Support nach Übergabe</li>
+        </ul>
+        <a href="tel:+491736762711" class="btn btn-primary">Projekt besprechen</a>
+      </div>
+
+      <div class="price-card">
         <h3>Individuell</h3>
         <p class="price-sub">Wenn's größer wird</p>
         <div class="price-amount"><span class="num">95 €</span><span class="unit">/ h netto</span></div>
@@ -1223,8 +1256,8 @@
 <section id="kontakt" style="padding-top:0;">
   <div class="container">
     <div class="contact-band">
-      <h2>Einfach anrufen</h2>
-      <p>Ein Anruf reicht. Kein Formular, kein Login. Ich schau mir euren Prozess an und sage ehrlich, ob's was Kleines zu holen gibt — oder ob's bei euch eh schon rund läuft.</p>
+      <h2>Anrufen oder schreiben</h2>
+      <p>Ein Anruf reicht — oder schreibt mir per WhatsApp, auch außerhalb der Bürozeiten. Kein Formular, kein Login. Ich schau mir euren Prozess an und sage ehrlich, ob's was Kleines zu holen gibt — oder ob's bei euch eh schon rund läuft.</p>
       <div class="contact-actions">
         <a class="btn btn-primary btn-lg" href="tel:+491736762711">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1236,7 +1269,7 @@
         </a>
         <a class="btn btn-ghost-light btn-lg" href="mailto:info@systemic-automation.de">info@systemic-automation.de</a>
       </div>
-      <p class="contact-fine">Mo–Fr 09:00–17:00 Uhr · Vor-Ort im Raum Hamburg, sonst bundesweit per Remote.</p>
+      <p class="contact-fine">Telefon Mo–Fr 09:00–17:00 Uhr · WhatsApp jederzeit — ich melde mich zurück · Vor-Ort im Raum Hamburg, sonst bundesweit per Remote.</p>
     </div>
   </div>
 </section>
