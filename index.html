@@ -91,6 +91,23 @@
       },
       {
         "@type": "Offer",
+        "price": "1500",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "1500",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false,
+          "description": "Festpreis ab 1.500 € netto, 2-3 Arbeitstage"
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Prozess-Audit + Roadmap",
+          "description": "Soll-Ist-Analyse der Kernprozesse mit schriftlichem Bericht und priorisierter Roadmap: was sich automatisieren lohnt, was nicht, und in welcher Reihenfolge. Umsetzung auf Wunsch aus einer Hand."
+        }
+      },
+      {
+        "@type": "Offer",
         "price": "350",
         "priceCurrency": "EUR",
         "priceSpecification": {
@@ -119,7 +136,7 @@
         },
         "itemOffered": {
           "@type": "Service",
-          "name": "Komplett-Workflow",
+          "name": "Komplett-Workflow (Umsetzung)",
           "description": "Mehrere wiederkehrende Büroprozesse end-to-end automatisiert: mehrere Datenquellen (PDF, Excel, E-Mail), Einrichtung und Einweisung des Teams, DATEV-/Lexware-Export inklusive, 3 Monate Support nach Übergabe."
         }
       },
@@ -625,6 +642,20 @@
   .compare-savings b { color: var(--accent-strong); font-size: 22px; }
 
   /* ---------- Pricing ---------- */
+  .audit-card {
+    display: grid; gap: 28px; align-items: center; grid-template-columns: 1fr;
+    background: var(--card); border: 1.5px solid var(--accent); border-radius: 16px;
+    padding: 36px 32px; margin: 0 0 28px; position: relative;
+    box-shadow: 0 20px 48px -12px rgba(37,99,235,0.18);
+  }
+  @media (min-width: 860px) { .audit-card { grid-template-columns: 1.4fr auto; } }
+  .audit-card .price-badge { left: 32px; transform: none; }
+  .audit-card h3 { font-size: 22px; margin: 10px 0 8px; }
+  .audit-card p { margin: 0 0 14px; color: var(--ink-soft); font-size: 15.5px; }
+  .audit-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+  .audit-card li { display: flex; gap: 10px; font-size: 14.5px; color: var(--ink-soft); }
+  .audit-side { display: grid; gap: 14px; justify-items: start; }
+  @media (min-width: 860px) { .audit-side { justify-items: end; text-align: right; } }
   .pricing {
     display: grid; gap: 28px; grid-template-columns: 1fr;
     align-items: start;  /* start statt stretch — erlaubt scale ohne Clipping */
@@ -842,7 +873,7 @@
       <div>
         <span class="hero-eyebrow reveal-up d1"><span class="dot"></span> Bundesweit · Remote · Festpreis · Kein Abo</span>
         <h1 class="reveal-up d1">Ganze Büroabläufe automatisiert.<br><span class="accent">Nicht nur Tipparbeit.</span></h1>
-        <p class="hero-lead reveal-up d2">Für Hausverwaltungen und KMU, die Monat für Monat dieselben Prozesse von Hand erledigen. Ich baue die Automatisierung — DSGVO-konform, ohne Abo, in Wochen statt Monaten.</p>
+        <p class="hero-lead reveal-up d2">Für Hausverwaltungen und KMU, die Monat für Monat dieselben Prozesse von Hand erledigen. Ich analysiere eure Abläufe, sage ehrlich, wo Automatisierung sich lohnt, und baue sie dann selbst. DSGVO-konform, ohne Abo, in Wochen statt Monaten.</p>
         <ul class="hero-bullets reveal-up d3">
           <li><span class="check">✓</span> Ganze Abläufe automatisiert — von der Rechnungserfassung bis zur Nebenkostenabrechnung</li>
           <li><span class="check">✓</span> Eure Daten bleiben in der EU — DSGVO-konform, keine US-Konzerne</li>
@@ -1068,7 +1099,26 @@
     <div class="section-head">
       <span class="kicker">Transparente Festpreise</span>
       <h2>Pakete &amp; Preise</h2>
-      <p>Klare Festpreise für die ersten beiden Schritte. Erst danach entscheidet sich, ob eine größere Umsetzung Sinn ergibt.</p>
+      <p>Klare Festpreise, aufsteigende Stufen: vom kurzen Check über das Audit bis zur Umsetzung. Jede Stufe steht für sich, keine verpflichtet zur nächsten.</p>
+    </div>
+
+    <div class="audit-card">
+      <div>
+        <span class="price-badge">Kernprodukt</span>
+        <h3>Prozess-Audit + Roadmap</h3>
+        <p>Zwei bis drei Tage schaue ich mir eure Abläufe an, wie ein Ingenieur: Soll-Ist-Vergleich statt Bauchgefühl. Ihr bekommt einen schriftlichen Bericht mit priorisierter Roadmap, was sich automatisieren lohnt, was nicht, und in welcher Reihenfolge.</p>
+        <ul>
+          <li><span class="ck">✓</span> Soll-Ist-Analyse eurer Kernprozesse</li>
+          <li><span class="ck">✓</span> Schriftlicher Bericht mit priorisierter Roadmap</li>
+          <li><span class="ck">✓</span> Ehrliche Empfehlung, auch wo sich nichts lohnt</li>
+          <li><span class="ck">✓</span> Umsetzung auf Wunsch aus einer Hand</li>
+        </ul>
+      </div>
+      <div class="audit-side">
+        <div class="price-amount"><span class="num">ab 1.500 €</span><span class="unit">netto</span></div>
+        <p class="price-note">Festpreis · 2-3 Arbeitstage</p>
+        <a href="tel:+491736762711" class="btn btn-primary">Audit besprechen</a>
+      </div>
     </div>
 
     <div class="pricing">
