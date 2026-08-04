@@ -86,6 +86,7 @@
     h1 { font-size: 30px; }
   }
 </style>
+<script src="/consent.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -112,7 +113,7 @@
 
       <h2>2. Grundsatz</h2>
       <p>
-        Diese Website ist als statische Informationsseite geplant. Es gibt kein Kontaktformular, kein Tracking, keine eingebundenen Werbenetzwerke und keine bewusst gesetzten Marketing-Cookies.
+        Diese Website ist eine statische Informationsseite. Es gibt kein Kontaktformular und keine eingebundenen Werbenetzwerke. Zur Reichweitenmessung werden zwei Dienste eingesetzt, die in den Abschnitten 4 und 5 beschrieben sind. Google Analytics wird ausschließlich nach Ihrer ausdrücklichen Einwilligung geladen; ohne Zustimmung werden keine Daten an Google übertragen und keine Cookies zu diesem Zweck gesetzt.
       </p>
 
       <h2>3. Hosting und Server-Logs</h2>
@@ -123,7 +124,33 @@
         Zweck der Verarbeitung ist die sichere und stabile Bereitstellung der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt im Betrieb einer funktionsfähigen und sicheren Website. Mit Cloudflare besteht ein Auftragsverarbeitungsvertrag; die Übermittlung in Drittländer erfolgt auf Grundlage der EU-Standardvertragsklauseln.
       </p>
 
-      <h2>4. Kontakt per E-Mail</h2>
+      <h2>4. Reichweitenmessung mit Cloudflare Web Analytics</h2>
+      <p>
+        Für eine grundlegende Zugriffsstatistik wird Cloudflare Web Analytics eingesetzt (Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA). Der Dienst arbeitet ohne Cookies und ohne Wiedererkennung einzelner Besucherinnen und Besucher. Es wird kein geräteübergreifendes Profil gebildet und keine Kennung dauerhaft auf Ihrem Gerät gespeichert.
+      </p>
+      <p>
+        Erfasst werden aggregierte Angaben wie aufgerufene Seite, Referrer-URL, ungefähre Herkunftsregion, Browsertyp und Ladezeiten. Zweck ist die statistische Auswertung der Websitenutzung. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse liegt in der bedarfsgerechten Gestaltung der Website. Da keine Informationen auf Ihrem Endgerät gespeichert oder ausgelesen werden, ist hierfür keine Einwilligung nach § 25 TDDDG erforderlich. Mit Cloudflare besteht ein Auftragsverarbeitungsvertrag; die Übermittlung in Drittländer erfolgt auf Grundlage der EU-Standardvertragsklauseln.
+      </p>
+
+      <h2>5. Google Analytics 4, nur mit Ihrer Einwilligung</h2>
+      <p>
+        Sofern Sie zustimmen, wird Google Analytics 4 geladen (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Vor Ihrer Zustimmung wird kein Skript von Google nachgeladen und keine Verbindung zu Google-Servern aufgebaut.
+      </p>
+      <p>
+        Google Analytics setzt Cookies und verarbeitet unter anderem gekürzte IP-Adresse, aufgerufene Seiten, Verweildauer, Referrer-URL, ungefähren Standort sowie Geräte- und Browserangaben. Zweck ist die Analyse des Nutzungsverhaltens zur Verbesserung des Angebots. Rechtsgrundlage für das Speichern und Auslesen von Informationen auf Ihrem Endgerät ist § 25 Abs. 1 TDDDG, für die anschließende Verarbeitung Art. 6 Abs. 1 lit. a DSGVO, jeweils Ihre Einwilligung.
+      </p>
+      <p>
+        Eine Übermittlung in die USA an Google LLC ist nicht ausgeschlossen. Google LLC ist unter dem EU-US Data Privacy Framework zertifiziert; ergänzend gelten die EU-Standardvertragsklauseln. Trotz dieser Grundlagen lässt sich ein Zugriff US-amerikanischer Behörden nicht vollständig ausschließen. Weitere Informationen finden Sie in der <a href="https://policies.google.com/privacy?hl=de" rel="noopener noreferrer" target="_blank">Datenschutzerklärung von Google</a>.
+      </p>
+      <p>
+        Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Der Widerruf ist genauso einfach wie die Erteilung. Nach dem Widerruf werden die von Google gesetzten Cookies gelöscht und der Dienst nicht mehr geladen. Die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt unberührt.
+      </p>
+      <p>
+        <button type="button" id="sa-widerruf" class="sa-widerruf-button">Einwilligung widerrufen oder ändern</button>
+        <span id="sa-status" class="sa-status"></span>
+      </p>
+
+      <h2>6. Kontakt per E-Mail</h2>
       <p>
         Wenn Sie per E-Mail Kontakt aufnehmen, werden die von Ihnen übermittelten Daten verarbeitet, um die Anfrage zu beantworten und gegebenenfalls vorvertragliche oder vertragliche Schritte durchzuführen.
       </p>
@@ -131,22 +158,22 @@
         Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern die Anfrage auf einen Vertrag oder eine vorvertragliche Maßnahme gerichtet ist. In sonstigen Fällen ist Rechtsgrundlage Art. 6 Abs. 1 lit. f DSGVO.
       </p>
 
-      <h2>5. Kontakt per WhatsApp</h2>
+      <h2>7. Kontakt per WhatsApp</h2>
       <p>
         Auf der Website wird ein Link zu WhatsApp (WhatsApp Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland) angeboten. Die Nutzung ist freiwillig; erst mit dem Anklicken des Links und der Nutzung von WhatsApp gelten die Datenschutzbestimmungen von WhatsApp. Es werden durch das bloße Aufrufen dieser Website keine Daten an WhatsApp übertragen.
       </p>
 
-      <h2>6. Keine automatisierte Entscheidungsfindung</h2>
+      <h2>8. Keine automatisierte Entscheidungsfindung</h2>
       <p>
         Es findet keine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO statt.
       </p>
 
-      <h2>7. Speicherdauer</h2>
+      <h2>9. Speicherdauer</h2>
       <p>
         Personenbezogene Daten werden nur so lange gespeichert, wie es für die Bearbeitung der Anfrage, die Vertragsdurchführung oder gesetzliche Aufbewahrungspflichten erforderlich ist.
       </p>
 
-      <h2>8. Ihre Rechte</h2>
+      <h2>10. Ihre Rechte</h2>
       <p>Betroffene Personen haben nach Maßgabe der DSGVO insbesondere folgende Rechte:</p>
       <ul>
         <li>Auskunft über die verarbeiteten personenbezogenen Daten</li>
@@ -157,13 +184,13 @@
         <li>Beschwerde bei einer Datenschutzaufsichtsbehörde</li>
       </ul>
 
-      <h2>9. Zuständige Aufsichtsbehörde</h2>
+      <h2>11. Zuständige Aufsichtsbehörde</h2>
       <p>
         Für Hamburg ist regelmäßig der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit zuständig.
       </p>
 
-      <h2>10. Stand</h2>
-      <p>Stand dieser Datenschutzerklärung: 10. Juni 2026.</p>
+      <h2>12. Stand</h2>
+      <p>Stand dieser Datenschutzerklärung: 4. August 2026.</p>
     </section>
   </main>
 

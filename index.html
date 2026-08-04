@@ -36,7 +36,7 @@
   "@context": "https://schema.org",
   "@type": ["ProfessionalService", "LocalBusiness"],
   "name": "Systemic Automation",
-  "description": "Systemic Automation entwickelt maßgeschneiderte Prozessautomatisierung für Hausverwaltungen und kleine bis mittelständische Betriebe – bundesweit, per Remote. Wir automatisieren ganze Büroabläufe: von der Rechnungserfassung über Dokumentenverarbeitung bis zur Nebenkostenabrechnung. Kein Abo, kein SaaS – Festpreise, DSGVO-konform auf EU-Servern (Mistral AI, Microsoft Azure EU) verarbeitet.",
+  "description": "Systemic Automation entwickelt maßgeschneiderte Prozessautomatisierung für Hausverwaltungen und kleine bis mittelständische Betriebe – bundesweit, per Remote. Wir automatisieren ganze Büroabläufe: von der Rechnungserfassung über Dokumentenverarbeitung bis zur Nebenkostenabrechnung. Kein Abo, kein SaaS – Festpreise; KI und Texterkennung laufen bei Bedarf über den regionalen EU-Endpunkt von Mistral AI.",
   "url": "https://systemic-automation.de/",
   "image": "https://systemic-automation.de/og-image.jpg",
   "logo": {
@@ -191,7 +191,7 @@
     {
       "@type": "Question",
       "name": "Brauche ich für den Workflow eine Cloud-Lösung?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Für Texterkennung und KI-Verarbeitung ja — und zwar DSGVO-konform auf europäischen Servern (Mistral AI in Frankreich, Microsoft Azure EU-Region). Ihre Daten gehen nicht an US-Konzerne. Einfache Workflows ohne KI laufen auch ganz ohne Cloud."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Für Texterkennung und KI-Verarbeitung ja. Der aktuelle Workflow nutzt dafür ausschließlich den regionalen EU-Endpunkt von Mistral AI. Azure oder andere KI-Anbieter sind nicht eingebunden. Einfache Workflows ohne KI laufen ganz ohne Cloud."}
     },
     {
       "@type": "Question",
@@ -211,7 +211,7 @@
     {
       "@type": "Question",
       "name": "Was passiert mit meinen Daten?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Während der Umsetzung sehe ich nur das, was Sie mir freiwillig geben — meist anonymisierte Beispiel-Dokumente. Im laufenden Betrieb verlassen Ihre Daten Ihr Haus nicht. Bei sensiblen Bereichen sprechen wir die Spielregeln vorher in Ruhe durch."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Während der Umsetzung verwende ich möglichst anonymisierte Beispiel-Dokumente. Lokale Verarbeitung bleibt auf Ihrem Rechner. Wenn KI oder OCR nötig ist, werden die dafür erforderlichen Daten über den regionalen EU-Endpunkt von Mistral verarbeitet. Umfang, Zweck und Aufbewahrung klären wir vor Projektstart."}
     },
     {
       "@type": "Question",
@@ -838,6 +838,7 @@
     .about-card { padding: 32px 24px; }
   }
 </style>
+<script src="/consent.js" defer></script>
 </head>
 <body>
 
@@ -876,7 +877,7 @@
         <p class="hero-lead reveal-up d2">Für Hausverwaltungen und KMU, die Monat für Monat dieselben Prozesse von Hand erledigen. Ich analysiere eure Abläufe, sage ehrlich, wo Automatisierung sich lohnt, und baue sie dann selbst. DSGVO-konform, ohne Abo, in Wochen statt Monaten.</p>
         <ul class="hero-bullets reveal-up d3">
           <li><span class="check">✓</span> Ganze Abläufe automatisiert — von der Rechnungserfassung bis zur Nebenkostenabrechnung</li>
-          <li><span class="check">✓</span> Eure Daten bleiben in der EU — DSGVO-konform, keine US-Konzerne</li>
+          <li><span class="check">✓</span> KI und OCR über Mistrals regionalen EU-Endpunkt</li>
           <li><span class="check">✓</span> Bedienung per Doppelklick, ohne IT-Kenntnisse</li>
         </ul>
         <div class="hero-cta reveal-up d4">
@@ -1213,7 +1214,7 @@
     <div class="trust-grid">
       <div class="trust-item">
         <span class="trust-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-        <div><h4>Eure Daten bleiben in Europa</h4><p>Verarbeitung DSGVO-konform auf europäischen Servern — KI und Texterkennung über Mistral AI (Frankreich) und Microsoft Azure (EU-Region), nicht über US-Konzerne. Was ohne KI lösbar ist, bleibt komplett lokal.</p></div>
+        <div><h4>EU-Endpunkt statt globaler Verarbeitung</h4><p>KI und Texterkennung laufen bei Bedarf ausschließlich über den regionalen EU-Endpunkt von Mistral AI. Azure oder andere KI-Anbieter sind im aktuellen Workflow nicht eingebunden. Was ohne KI lösbar ist, bleibt komplett lokal.</p></div>
       </div>
       <div class="trust-item">
         <span class="trust-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
@@ -1269,7 +1270,7 @@
     <div class="faq-list">
       <details class="faq-item">
         <summary>Brauche ich für den Workflow eine Cloud-Lösung?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div class="faq-body">Für Texterkennung und KI-Verarbeitung ja — und zwar DSGVO-konform auf europäischen Servern (Mistral AI in Frankreich, Microsoft Azure EU-Region). Eure Daten gehen nicht an US-Konzerne. Einfache Workflows ohne KI laufen auch ganz ohne Cloud.</div>
+        <div class="faq-body">Für Texterkennung und KI-Verarbeitung ja. Der aktuelle Workflow nutzt dafür ausschließlich den regionalen EU-Endpunkt von Mistral AI. Azure oder andere KI-Anbieter sind nicht eingebunden. Einfache Workflows ohne KI laufen ganz ohne Cloud.</div>
       </details>
       <details class="faq-item">
         <summary>Was kostet der laufende Betrieb nach dem Pilot?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -1285,7 +1286,7 @@
       </details>
       <details class="faq-item">
         <summary>Was passiert mit meinen Daten?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div class="faq-body">Während der Umsetzung sehe ich nur das, was ihr mir freiwillig gebt — meist anonymisierte Beispiel-Dokumente. Im laufenden Betrieb verlassen eure Daten das Haus nicht. Bei sensiblen Bereichen sprechen wir die Spielregeln vorher in Ruhe durch.</div>
+        <div class="faq-body">Während der Umsetzung verwende ich möglichst anonymisierte Beispiel-Dokumente. Lokale Verarbeitung bleibt auf eurem Rechner. Wenn KI oder OCR nötig ist, werden die dafür erforderlichen Daten über den regionalen EU-Endpunkt von Mistral verarbeitet. Umfang, Zweck und Aufbewahrung klären wir vor Projektstart.</div>
       </details>
       <details class="faq-item">
         <summary>Was, wenn das System einen Fehler macht?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></summary>
