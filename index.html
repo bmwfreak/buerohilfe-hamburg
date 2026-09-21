@@ -441,106 +441,14 @@
   .hero-trust span { display: inline-flex; align-items: center; gap: 7px; }
   .hero-trust svg { color: #60a5fa; }
 
-  /* ---------- Dashboard Mockup ---------- */
-  .mockup {
-    background: linear-gradient(180deg, #ffffff, #f8fafc);
-    border-radius: 16px; border: 1px solid rgba(226,232,240,0.9);
-    box-shadow: 0 30px 60px -20px rgba(2,6,23,0.6), 0 0 0 1px rgba(255,255,255,0.04);
-    overflow: hidden;
+  /* ---------- Demo-Video (Hero) ---------- */
+  .demo { margin: 0; scroll-margin-top: 90px; }
+  .demo video {
+    display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #0f172a;
+    border-radius: 16px; border: 1px solid rgba(148,163,184,0.25);
+    box-shadow: 0 30px 60px -20px rgba(2,6,23,0.6); cursor: pointer;
   }
-  .mockup-bar {
-    display: flex; align-items: center; gap: 8px;
-    padding: 13px 16px; background: #f1f5f9; border-bottom: 1px solid var(--line);
-  }
-  .mockup-bar .dots { display: flex; gap: 6px; }
-  .mockup-bar .dots i { width: 11px; height: 11px; border-radius: 50%; display: block; }
-  .mockup-bar .dots i:nth-child(1) { background: #f87171; }
-  .mockup-bar .dots i:nth-child(2) { background: #fbbf24; }
-  .mockup-bar .dots i:nth-child(3) { background: #34d399; }
-  .mockup-bar .title { margin-left: 8px; font-size: 12.5px; color: var(--ink-muted); font-weight: 600; }
-  .mockup-body { padding: 20px; }
-  .mockup-h {
-    display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
-  }
-  .mockup-h strong { font-size: 15px; color: var(--ink); }
-  .mockup-badge {
-    font-size: 11.5px; font-weight: 700; color: var(--ok);
-    background: var(--ok-soft); border: 1px solid var(--ok-line);
-    padding: 4px 10px; border-radius: 999px;
-  }
-  .file-row {
-    display: flex; align-items: center; gap: 12px;
-    padding: 11px 12px; border: 1px solid var(--line);
-    border-radius: 9px; margin-bottom: 9px; background: #fff;
-    opacity: 0; transform: translateY(8px);
-    animation: rowIn 0.5s ease forwards;
-  }
-  .file-row:nth-child(1) { animation-delay: 0.25s; }
-  .file-row:nth-child(2) { animation-delay: 0.45s; }
-  .file-row:nth-child(3) { animation-delay: 0.65s; }
-  @keyframes rowIn { to { opacity: 1; transform: translateY(0); } }
-  .file-ico {
-    flex: none; width: 30px; height: 30px; border-radius: 7px;
-    background: var(--accent-soft); color: var(--accent-strong);
-    display: grid; place-items: center; font-size: 12px; font-weight: 700;
-  }
-  .file-meta { flex: 1; min-width: 0; }
-  .file-meta b { display: block; font-size: 13.5px; color: var(--ink); font-weight: 600; }
-  .file-meta span { font-size: 12px; color: var(--ink-muted); }
-  .file-check {
-    flex: none; width: 22px; height: 22px; border-radius: 50%;
-    background: var(--ok); color: #fff; display: grid; place-items: center;
-    font-size: 12px; font-weight: 800;
-  }
-
-  /* Pipeline (Hero-Mockup) */
-  .pipeline { display: grid; gap: 0; margin-bottom: 4px; }
-  .pipe-step {
-    display: flex; align-items: center; gap: 13px; padding: 12px 0; position: relative;
-    opacity: 0; transform: translateY(8px); animation: rowIn 0.5s ease forwards;
-  }
-  .pipe-step:nth-child(1) { animation-delay: 0.25s; }
-  .pipe-step:nth-child(2) { animation-delay: 0.5s; }
-  .pipe-step:nth-child(3) { animation-delay: 0.75s; }
-  .pipe-step:not(:last-child)::after {
-    content: ""; position: absolute; left: 17px; top: 46px; height: 14px; width: 2px;
-    background: var(--line);
-  }
-  .pipe-ico {
-    flex: none; width: 36px; height: 36px; border-radius: 10px;
-    display: grid; place-items: center; font-size: 15px; font-weight: 700;
-  }
-  .pipe-ico.blue  { background: var(--accent-soft); color: var(--accent-strong); border: 1px solid var(--accent-line); }
-  .pipe-ico.green { background: var(--ok-soft); color: var(--ok); border: 1px solid var(--ok-line); }
-  .pipe-meta { flex: 1; min-width: 0; }
-  .pipe-meta b { display: block; font-size: 14px; color: var(--ink); font-weight: 600; }
-  .pipe-meta span { font-size: 12px; color: var(--ink-muted); }
-  .pipe-status { flex: none; font-size: 11.5px; font-weight: 700; padding: 4px 11px; border-radius: 999px; }
-  .pipe-status.ok  { color: var(--ok); background: var(--ok-soft); border: 1px solid var(--ok-line); }
-  .pipe-status.run { color: var(--accent-strong); background: var(--accent-soft); border: 1px solid var(--accent-line); }
-
-  .progress-wrap { margin-top: 18px; }
-  .progress-label {
-    display: flex; justify-content: space-between; align-items: baseline;
-    font-size: 12.5px; color: var(--ink-muted); margin-bottom: 8px; font-weight: 500;
-  }
-  .progress-label b { color: var(--ink); font-size: 13px; font-weight: 700; }
-  .progress-track {
-    height: 8px; background: var(--line); border-radius: 999px; overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%; width: 0;
-    background: linear-gradient(90deg, var(--accent), #60a5fa);
-    border-radius: 999px;
-    animation: fill 1.6s cubic-bezier(.2,.7,.2,1) 0.4s forwards;
-  }
-  @keyframes fill { to { width: 100%; } }
-  .mockup-foot {
-    display: flex; gap: 18px; margin-top: 18px; padding-top: 16px;
-    border-top: 1px solid var(--line);
-  }
-  .mockup-stat b { display: block; font-size: 20px; color: var(--ink); font-weight: 800; letter-spacing: -0.02em; }
-  .mockup-stat span { font-size: 12px; color: var(--ink-muted); }
+  .demo figcaption { margin-top: 12px; font-size: 13px; line-height: 1.5; color: #94a3b8; }
 
   /* ---------- Sections ---------- */
   section { padding: 128px 0; scroll-margin-top: 80px; }
@@ -819,8 +727,6 @@
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
-    .progress-fill { width: 100%; }
-    .file-row { opacity: 1; transform: none; }
     .reveal-up { opacity: 1; transform: none; }
   }
 
@@ -874,10 +780,10 @@
       <div>
         <span class="hero-eyebrow reveal-up d1"><span class="dot"></span> Bundesweit · Remote · Festpreis · Kein Abo</span>
         <h1 class="reveal-up d1">Ganze Büroabläufe automatisiert.<br><span class="accent">Nicht nur Tipparbeit.</span></h1>
-        <p class="hero-lead reveal-up d2">Für Hausverwaltungen und KMU, die Monat für Monat dieselben Prozesse von Hand erledigen. Ich analysiere eure Abläufe, sage ehrlich, wo Automatisierung sich lohnt, und baue sie dann selbst. Das Werkzeug für Rechnungen und Belege gibt es bereits und läuft lokal auf eurem Rechner. Ohne Abo, in Wochen statt Monaten.</p>
+        <p class="hero-lead reveal-up d2">Für Hausverwaltungen und KMU, die Monat für Monat dieselben Prozesse von Hand erledigen. Ich analysiere eure Abläufe, sage ehrlich, wo Automatisierung sich lohnt, und baue sie dann selbst. Das Werkzeug für Rechnungen und Belege gibt es bereits: Es läuft lokal auf eurem Rechner, auf Wunsch mit Mistral-Texterkennung über EU-Server. Ohne Abo, in Wochen statt Monaten.</p>
         <ul class="hero-bullets reveal-up d3">
           <li><span class="check">✓</span> Ganze Abläufe automatisiert — von der Rechnungserfassung bis zur Nebenkostenabrechnung</li>
-          <li><span class="check">✓</span> Texterkennung läuft lokal — auch ohne Internetverbindung</li>
+          <li><span class="check">✓</span> Texterkennung lokal, auch ohne Internet — Mistral (EU) nur, wenn ihr zustimmt</li>
           <li><span class="check">✓</span> Bedienung per Doppelklick, ohne IT-Kenntnisse</li>
         </ul>
         <div class="hero-cta reveal-up d4">
@@ -897,45 +803,15 @@
         </div>
       </div>
 
-      <!-- Dashboard Mockup -->
-      <div class="mockup reveal-up d3" aria-hidden="true">
-        <div class="mockup-bar">
-          <span class="dots"><i></i><i></i><i></i></span>
-          <span class="title">Systemic Automation · Rechnungslauf</span>
-        </div>
-        <div class="mockup-body">
-          <div class="mockup-h">
-            <strong>Rechnungslauf · KW 23</strong>
-            <span class="mockup-badge">● Aktiv</span>
-          </div>
-          <div class="pipeline">
-            <div class="pipe-step">
-              <span class="pipe-ico blue">PDF</span>
-              <span class="pipe-meta"><b>Eingehende Rechnung</b><span>Rechnung_2024-0149.pdf</span></span>
-              <span class="pipe-status ok">Erkannt</span>
-            </div>
-            <div class="pipe-step">
-              <span class="pipe-ico blue">⚙</span>
-              <span class="pipe-meta"><b>Automatische Extraktion</b><span>Datum · Nummer · Betrag · USt</span></span>
-              <span class="pipe-status ok">4 Felder</span>
-            </div>
-            <div class="pipe-step">
-              <span class="pipe-ico green">✓</span>
-              <span class="pipe-meta"><b>In Excel gebucht</b><span>Rechnungen_2024.xlsx</span></span>
-              <span class="pipe-status ok">Fertig</span>
-            </div>
-          </div>
-          <div class="progress-wrap">
-            <div class="progress-label"><span>Fortschritt der Automatisierung</span><b>100 %</b></div>
-            <div class="progress-track"><div class="progress-fill"></div></div>
-          </div>
-          <div class="mockup-foot">
-            <div class="mockup-stat"><b>147</b><span>Rechnungen verarbeitet</span></div>
-            <div class="mockup-stat"><b>0</b><span>Fehler</span></div>
-            <div class="mockup-stat"><b>6,2 h</b><span>gespart / Monat</span></div>
-          </div>
-        </div>
-      </div>
+      <!-- Demo-Video: selbst gehostet, keine Drittanbieter -->
+      <figure id="demo" class="demo reveal-up d3">
+        <video controls preload="none" playsinline width="1920" height="1080" poster="/media/demo-poster.jpg"
+               aria-label="Demo-Video: Rechnungen prüfen statt abtippen">
+          <source src="/media/demo-belegerfassung.mp4" type="video/mp4">
+          <track kind="captions" src="/media/demo.vtt" srclang="de" label="Deutsch" default>
+        </video>
+        <figcaption>Demo mit Beispielrechnungen, 0:53 mit Ton, gesprochen von einer KI-Stimme. In diesem Beispiel liest die Mistral-Texterkennung über EU-Server aus, eine lokale Erkennung prüft gegen. Jeder Wert wird vor dem Export von Hand freigegeben.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
