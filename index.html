@@ -448,6 +448,8 @@
     border-radius: 16px; border: 1px solid rgba(148,163,184,0.25);
     box-shadow: 0 30px 60px -20px rgba(2,6,23,0.6); cursor: pointer;
   }
+  .demo-frame { position: relative; }
+  .demo-play { position: absolute; inset: 0 0 48px 0; background: transparent; border: 0; cursor: pointer; }
   .demo figcaption { margin-top: 8px; font-size: 11px; line-height: 1.4; color: #94a3b8; }
 
   /* ---------- Sections ---------- */
@@ -745,6 +747,7 @@
   }
 </style>
 <script src="/consent.js" defer></script>
+<script src="/demo.js" defer></script>
 </head>
 <body>
 
@@ -805,11 +808,14 @@
 
       <!-- Demo-Video: selbst gehostet, keine Drittanbieter -->
       <figure id="demo" class="demo reveal-up d3">
+        <div class="demo-frame">
         <video controls preload="none" playsinline width="1920" height="1080" poster="/media/demo-poster.jpg"
                aria-label="Demo-Video: Rechnungen prüfen statt abtippen">
           <source src="/media/demo-belegerfassung.mp4" type="video/mp4">
           <track kind="captions" src="/media/demo.vtt" srclang="de" label="Deutsch">
         </video>
+        <button type="button" class="demo-play" aria-label="Demo-Video abspielen"></button>
+        </div>
         <figcaption>Beispiel-Demo · KI-Sprecherstimme</figcaption>
       </figure>
     </div>
