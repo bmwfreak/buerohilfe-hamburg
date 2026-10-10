@@ -750,6 +750,14 @@
     .hero-cta .btn, .contact-actions .btn, .about-cta .btn { width: 100%; }
     .about-card { padding: 32px 24px; }
   }
+
+  /* Ablauf-Beispiel (Reel als Erklaerung) */
+  .flow-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:56px;align-items:center;max-width:960px;margin:0 auto}
+  .flow-video{margin:0}
+  .flow-video video{width:100%;height:auto;aspect-ratio:9/16;border-radius:20px;background:var(--hero-bg);display:block;object-fit:cover}
+  .flow-video figcaption{margin-top:10px;font-size:14px;color:var(--ink-muted)}
+  .flow-cta{margin-top:24px}
+  @media (max-width: 760px){.flow-grid{grid-template-columns:1fr;gap:28px;justify-items:center}.flow-video{max-width:280px}}
 </style>
 <script src="/demo.js" defer></script>
 </head>
@@ -872,6 +880,34 @@
         <div class="also-card"><b>Excel-Konsolidierung</b><span>Mehrere Listen automatisch zu einer Wochenübersicht zusammenführen, inkl. Auffälligkeits-Markierung.</span></div>
         <div class="also-card"><b>E-Mail-Protokoll</b><span>Eingangsmails als strukturierte Excel-Liste: Absender, Thema, Kategorie, Status.</span></div>
         <div class="also-card"><b>Individuell</b><span>Spezialfälle und mehrere verknüpfte Quellen — nach schriftlicher Aufwandsschätzung.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF-BEISPIEL -->
+<section id="ablauf" class="section-white">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">So sieht es aus</span>
+      <h2>Zwölf Rechnungen in drei Schritten</h2>
+      <p>Ein Durchlauf in zwölf Sekunden, mit erfundenen Beispielrechnungen. Die Anwendung schlägt Werte vor, ihr prüft am Original und gebt frei.</p>
+    </div>
+    <div class="flow-grid">
+      <figure class="flow-video">
+        <video controls preload="none" playsinline width="1080" height="1920" poster="/media/ablauf-beispiel-poster.jpg"
+               aria-label="Beispiel: Zwölf Rechnungen werden ausgelesen, geprüft und freigegeben">
+          <source src="/media/ablauf-beispiel.mp4" type="video/mp4">
+        </video>
+        <figcaption>Beispiel mit erfundenen Rechnungen</figcaption>
+      </figure>
+      <div>
+        <div class="wf-side">
+          <div class="wf-step"><span class="num">1</span><span class="lbl"><b>Rechnungen rein</b><span>Als PDF, Scan oder Foto in einen Ordner legen oder ins Fenster ziehen</span></span></div>
+          <div class="wf-step"><span class="num">2</span><span class="lbl"><b>Werte stehen in der Liste</b><span>Lieferant, Nummer, Datum, Netto, Steuer, Brutto. Passt eine Rechnung rechnerisch nicht, wird die Differenz markiert</span></span></div>
+          <div class="wf-step"><span class="num">3</span><span class="lbl"><b>Ihr gebt frei</b><span>Jede Zeile prüft ihr am Original. Erst nach der Freigabe geht die Liste als Excel oder CSV raus</span></span></div>
+        </div>
+        <div class="flow-cta"><a href="tel:+491736762711" class="btn btn-primary">Mit euren eigenen Belegen ansehen? Ruf an</a></div>
       </div>
     </div>
   </div>
