@@ -783,7 +783,7 @@
   .hero-chips li{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:600;line-height:1.25;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px}
   .hero-chips li svg{flex:none;color:#7dd3fc}
   .hero-sub{font-size:20px;line-height:1.5}
-  .price-amount .num{font-size:clamp(40px,4.4vw,56px)!important;line-height:1.05}
+  .price-amount .num{font-size:clamp(34px,3.3vw,44px)!important;line-height:1.05;white-space:nowrap}
   .price-card ul li{font-size:17px}
   @media (max-width: 860px){.big-steps{grid-template-columns:1fr}.hero-chips{grid-template-columns:1fr}.big-step .bs-num{font-size:36px}}
 
@@ -814,6 +814,12 @@
   dialog.lb .lb-close{position:fixed;top:14px;right:14px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:#0f172a;font-size:26px;line-height:1;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.5);display:grid;place-items:center}
   dialog.lb .lb-close:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
   .shot-frame a{cursor:zoom-in}
+
+  .pricing.price3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pricing.price2{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:18px}
+  .more-center{margin-top:26px;text-align:center}
+  .more-center summary{font-size:18px}
+  @media (max-width: 900px){.pricing.price3,.pricing.price2{grid-template-columns:1fr}}
 </style>
 <dialog class="lb" id="lightbox" aria-label="Vergrößerte Ansicht"><button class="lb-close" type="button" aria-label="Schließen">&#10005;</button><img alt="" src=""></dialog>
 <script src="/demo.js" defer></script>
@@ -1055,36 +1061,14 @@
       <p>Klare Festpreise. Jede Stufe steht für sich.</p>
     </div>
 
-    <div class="audit-card">
-      <div>
-        <span class="price-badge">Kernprodukt</span>
-        <h3>Prozess-Audit + Roadmap</h3>
-        <p>2 bis 3 Tage Soll-Ist-Analyse, schriftlicher Bericht mit Roadmap.</p><details class="more"><summary>Mehr dazu</summary><div class="more-body"><p>Zwei bis drei Tage schaue ich mir eure Abläufe an, wie ein Ingenieur: Soll-Ist-Vergleich statt Bauchgefühl. Ihr bekommt einen schriftlichen Bericht mit priorisierter Roadmap, was sich automatisieren lohnt, was nicht, und in welcher Reihenfolge.</p></div></details>
-        <ul>
-          <li><span class="ck">✓</span> Soll-Ist-Analyse eurer Kernprozesse</li>
-          <li><span class="ck">✓</span> Schriftlicher Bericht mit priorisierter Roadmap</li>
-          <li><span class="ck">✓</span> Ehrliche Empfehlung, auch wo sich nichts lohnt</li>
-          <li><span class="ck">✓</span> Umsetzung auf Wunsch aus einer Hand</li>
-        </ul>
-      </div>
-      <div class="audit-side">
-        <div class="price-amount"><span class="num">ab 1.500 €</span><span class="unit">netto</span></div>
-        <p class="price-note">Festpreis · 2-3 Arbeitstage</p>
-        <a href="tel:+491736762711" class="btn btn-primary">Audit besprechen</a>
-      </div>
-    </div>
-
-    <div class="pricing">
-      <div class="price-card">
+    <div class="pricing price3"><div class="price-card">
         <h3>Prozesscheck</h3>
         <p class="price-sub">Nach 15 Minuten kostenloser Klärung</p>
         <div class="price-amount"><span class="num">99 €</span><span class="unit">netto</span></div>
         <p class="price-note">Pauschal · Festpreis</p>
-        <ul><li><span class="ck">✓</span> Vorab 15 Min. kostenlos: passt es überhaupt?</li><li><span class="ck">✓</span> 45 Minuten, online oder vor Ort</li><li><span class="ck">✓</span> Die drei größten Zeitfresser benannt</li></ul><details class="more"><summary>Alle Leistungen</summary><div class="more-body"><ul><li><span class="ck">✓</span> Eine Seite Befund &amp; Maßnahmen, am nächsten Werktag</li><li><span class="ck">✓</span> Klare Empfehlung: Pilot, Audit oder nichts</li><li><span class="ck">✓</span> Ohne weitere Verpflichtung</li></ul></div></details>
+        <ul><li><span class="ck">✓</span> Vorab 15 Min. kostenlos: passt es überhaupt?</li><li><span class="ck">✓</span> 45 Minuten, online oder vor Ort</li></ul><details class="more"><summary>Alle Leistungen</summary><div class="more-body"><ul><li><span class="ck">✓</span> Die drei größten Zeitfresser benannt</li><li><span class="ck">✓</span> Eine Seite Befund &amp; Maßnahmen, am nächsten Werktag</li><li><span class="ck">✓</span> Klare Empfehlung: Pilot, Audit oder nichts</li><li><span class="ck">✓</span> Ohne weitere Verpflichtung</li></ul></div></details>
         <a href="tel:+491736762711" class="btn btn-secondary">Termin anfragen</a>
-      </div>
-
-      <div class="price-card featured">
+      </div><div class="price-card featured">
         <span class="price-badge">Einstieg in die Umsetzung</span>
         <h3>Pilot-Workflow</h3>
         <p class="price-sub">Kleine Einrichtung oder Machbarkeitsprüfung</p>
@@ -1092,9 +1076,7 @@
         <p class="price-note">Festpreis pro Workflow</p>
         <ul><li><span class="ck">✓</span> Ein kleiner, klar abgegrenzter Schritt</li><li><span class="ck">✓</span> Prüfung &amp; Freigabe auf eurem Rechner</li></ul><details class="more"><summary>Alle Leistungen</summary><div class="more-body"><ul><li><span class="ck">✓</span> Bedienung per Doppelklick</li><li><span class="ck">✓</span> Übergabe-Termin mit Live-Demo</li><li><span class="ck">✓</span> 2 Wochen Hotfix-Support</li><li><span class="ck">✓</span> Größere Piloten nach Spezifikation</li></ul></div></details>
         <a href="tel:+491736762711" class="btn btn-primary">Pilot besprechen</a>
-      </div>
-
-      <div class="price-card">
+      </div><div class="price-card"><span class="price-badge">Kernprodukt</span><h3>Prozess-Audit</h3><p class="price-sub">Soll-Ist-Analyse mit Roadmap</p><div class="price-amount"><span class="num">ab 1.500 €</span><span class="unit">netto</span></div><p class="price-note">Festpreis · 2-3 Arbeitstage</p><ul><li><span class="ck">✓</span> Soll-Ist-Analyse eurer Kernprozesse</li><li><span class="ck">✓</span> Schriftlicher Bericht mit priorisierter Roadmap</li></ul><details class="more"><summary>Alle Leistungen</summary><div class="more-body"><ul><li><span class="ck">✓</span> Ehrliche Empfehlung, auch wo sich nichts lohnt</li><li><span class="ck">✓</span> Umsetzung auf Wunsch aus einer Hand</li></ul><p>Zwei bis drei Tage schaue ich mir eure Abläufe an, wie ein Ingenieur: Soll-Ist-Vergleich statt Bauchgefühl. Ihr bekommt einen schriftlichen Bericht mit priorisierter Roadmap, was sich automatisieren lohnt, was nicht, und in welcher Reihenfolge.</p></div></details><a href="tel:+491736762711" class="btn btn-primary">Audit besprechen</a></div></div><details class="more more-center"><summary>Weitere Stufen: Komplett-Workflow und Individuell</summary><div class="pricing price2"><div class="price-card">
         <span class="price-badge">Für mehrere Abläufe</span>
         <h3>Komplett-Workflow</h3>
         <p class="price-sub">Mehrere Prozesse in einem Rutsch</p>
@@ -1102,17 +1084,14 @@
         <p class="price-note">Festpreis · nach Spezifikation</p>
         <ul><li><span class="ck">✓</span> Mehrere Abläufe end-to-end automatisiert</li><li><span class="ck">✓</span> Mehrere Datenquellen (PDF, Excel, E-Mail)</li></ul><details class="more"><summary>Alle Leistungen</summary><div class="more-body"><ul><li><span class="ck">✓</span> Einrichtung &amp; Einweisung eures Teams</li><li><span class="ck">✓</span> CSV-/Excel-Export für eure Buchhaltung</li><li><span class="ck">✓</span> 3 Monate Support nach Übergabe</li></ul></div></details>
         <a href="tel:+491736762711" class="btn btn-primary">Projekt besprechen</a>
-      </div>
-
-      <div class="price-card">
+      </div><div class="price-card">
         <h3>Individuell</h3>
         <p class="price-sub">Wenn's größer wird</p>
         <div class="price-amount"><span class="num">95 €</span><span class="unit">/ h netto</span></div>
         <p class="price-note">Nach Aufwand · Schätzung vorab</p>
         <ul><li><span class="ck">✓</span> Schätzung schriftlich vor Beginn</li><li><span class="ck">✓</span> Wöchentliche Status-Updates</li></ul><details class="more"><summary>Alle Leistungen</summary><div class="more-body"><ul><li><span class="ck">✓</span> Abnahme in Etappen</li><li><span class="ck">✓</span> Mehrere Quellen, größere Workflows</li><li><span class="ck">✓</span> CSV-Export, abgestimmt auf euer Importformat</li></ul></div></details>
         <a href="mailto:info@systemic-automation.de" class="btn btn-secondary">Anfrage stellen</a>
-      </div>
-    </div>
+      </div></div></details>
   </div>
 </section>
 
