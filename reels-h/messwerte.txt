@@ -1,0 +1,10 @@
+== H1-40-minuten-60fps.mp4
+stream|width=1080|height=1920|r_frame_rate=60/1
+format|duration=9.000000
+    I:         -16.3 LUFS
+    Peak:       -1.2 dBFS
+== H2-freitag-belege-60fps.mp4
+stream|width=1080|height=1920|r_frame_rate=60/1
+format|duration=9.000000
+    I:         -16.5 LUFS
+    Peak:       -2.2 dBFS
