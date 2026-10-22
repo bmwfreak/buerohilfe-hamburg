@@ -8,3 +8,13 @@ stream|width=1080|height=1920|r_frame_rate=60/1
 format|duration=9.000000
     I:         -16.5 LUFS
     Peak:       -2.2 dBFS
+== H3-dieselben-zahlen-60fps.mp4
+stream|width=1080|height=1920|r_frame_rate=60/1
+format|duration=9.000000
+    I:         -17.0 LUFS
+    Peak:       -1.8 dBFS
+== H4-zeile-fuer-zeile-60fps.mp4
+stream|width=1080|height=1920|r_frame_rate=60/1
+format|duration=9.000000
+    I:         -15.8 LUFS
+    Peak:       -1.2 dBFS

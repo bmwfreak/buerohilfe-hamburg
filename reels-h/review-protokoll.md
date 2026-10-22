@@ -52,3 +52,23 @@ H2:
 - Liste größer: Zeilen 76 px, Schrift 36 px.
 
 Noten nach Runde 4 (eigene Review, kein Codex): H1 7 / 8 / 5, H2 7 / 8 / 5. Die Lesbarkeit ist besser geworden, an der Bereitschaft, "PRÜFEN" zu schreiben, ändert ein Reel allein wenig.
+
+## H3: Dieselben Zahlen. Zum dritten Mal. (gebaut 22.10., nach Bestätigung durch den Inhaber)
+
+Runde 1: Schild "✓ Freigegeben" im Angebotskopf abgeschnitten. Umgesetzt: Schild breiter.
+Endstand, Sicht Handwerksinhaber (eigene Review, kein Codex):
+1. Über 3 Sekunden dran: 7/10. Dreimal derselbe getippte Text ist sofort als Ärger erkennbar.
+2. Ohne Ton verständlich: 7/10. Die Verbindungslinien von der Anfrage zu Liste und Angebot sind dünn, das "füllt sich selbst" könnte deutlicher sein.
+3. PRÜFEN schreiben: 5/10.
+4. Größtes Problem: Im Hook ist die Schrift in den drei Karten auf dem Handy eher klein.
+
+## H4: Zeile für Zeile. Eine Stunde. (gebaut 22.10., nach Bestätigung durch den Inhaber)
+
+Runde 1: Mengenspalten zu eng, eine graue Linie ragte aus dem Papier. Umgesetzt: Spalten breiter, Linie entfernt.
+Endstand, Sicht Handwerksinhaber (eigene Review, kein Codex):
+1. Über 3 Sekunden dran: 7/10. Der rote Markierbalken, der Zeile für Zeile wandert, zeigt die Mühe gut.
+2. Ohne Ton verständlich: 8/10. Abgehakt in Blau, eine rote Abweichung, dann "Du entscheidest." ist klar.
+3. PRÜFEN schreiben: 5/10.
+4. Größtes Problem: Die Schrift auf Lieferschein und Rechnung im Hook ist mit 28 px an der Untergrenze.
+
+Abweichung vom Bauplan bei H4: Uhr 16:05, 16:08, 16:12, 16:15 bei Zeile 1 bis 4 (gut 3 Minuten pro Zeile). Der Plan nennt drei Zeiten, so passt die Rechnung zu jeder Zeile. Button "Später klären" statt "Rückfrage an Lieferant", wie in Fassung 2 des Bauplans festgelegt.

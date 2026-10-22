@@ -17,8 +17,8 @@ Ein Reel darf nur gebaut werden, wenn die gezeigte Funktion beim Inhaber wirklic
 |---|---|---|
 | H1 | Rechnungen auslesen, Liste, Freigabe, Export | ja |
 | H2 | Belege erfassen, sortierte Liste, Export CSV | ja |
-| H3 | Daten einmal eingeben, Liste und Angebot füllen sich | NEIN (bis der Inhaber "ja" einträgt) |
-| H4 | Lieferschein und Rechnung abgleichen, Abweichung markieren | NEIN (bis der Inhaber "ja" einträgt) |
+| H3 | Daten einmal eingeben, Liste und Angebot füllen sich | ja (vom Inhaber bestätigt am 22.10.2026) |
+| H4 | Lieferschein und Rechnung abgleichen, Abweichung markieren | ja (vom Inhaber bestätigt am 22.10.2026) |
 
 Für den ausführenden Chat: Steht bei einem Reel "NEIN", baue es nicht. Vermerke es im Protokoll und liefere die übrigen Reels. Ändere diese Tabelle nicht selbst.
 
