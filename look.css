@@ -60,8 +60,8 @@ a { color: var(--accent); text-decoration-color: rgba(29,78,216,.4); text-underl
 .hero-bullets .check { background: #2f5de8; border-color: #2f5de8; color: #fff; border-radius: 50%; }
 .hero-trust { color: #9fb0cc; }
 .hero-trust svg { color: #7ea6ff; }
-.hero .btn-primary { background: #2f5de8; box-shadow: 0 12px 26px -12px rgba(47,93,232,.9); }
-.hero .btn-primary:hover { background: #4a73ee; box-shadow: 0 14px 28px -12px rgba(47,93,232,.9); }
+.hero .btn-primary { background: #2f5de8; box-shadow: none; }
+.hero .btn-primary:hover { background: #4a73ee; box-shadow: none; }
 .hero .btn-ghost-light { color: #fff; border-color: rgba(255,255,255,.35); background: transparent; }
 .hero .btn-ghost-light:hover { background: rgba(255,255,255,.1); border-color: #fff; }
 .hero :focus-visible { outline-color: #fff; }
@@ -87,7 +87,7 @@ a { color: var(--accent); text-decoration-color: rgba(29,78,216,.4); text-underl
 .faq-item summary .chev { color: var(--accent); }
 
 /* Hervorgehobene Preiskarte: Schwarzblau */
-.price-card.featured { --ink: #fff; --ink-soft: #c5d0e6; --ink-muted: #9fb0cc; background: #0b1220; border-color: #2f5de8; box-shadow: 0 24px 48px -28px rgba(29,78,216,.7); }
+.price-card.featured { --ink: #fff; --ink-soft: #c5d0e6; --ink-muted: #9fb0cc; background: #0b1220; border-color: #2f5de8; box-shadow: 0 24px 48px -28px rgba(0,0,0,.6); }
 .price-card.featured h3, .price-card.featured .price-amount .num { color: #fff; }
 .price-card.featured li .ck { color: #7ea6ff; }
 .price-card.featured .price-badge { background: #2f5de8; color: #fff; }
@@ -162,8 +162,9 @@ p.code { color: var(--accent) !important; font-family: var(--serif); }
 .hero .hero-chips { display: flex; flex-wrap: wrap; gap: 10px 26px; }
 .hero .hero-chips li { background: none; border: 0; padding: 0; box-shadow: none; width: auto; }
 .tile-grid { gap: 30px 36px; }
-.tile { background: transparent; border: 0; border-top: 2px solid var(--ink); border-radius: 0; padding: 18px 0 0; }
-.tile:hover { border-color: transparent; border-top-color: var(--accent); }
+.tile { background: transparent; border: 0; border-radius: 0; padding: 2px 4px 0; }
+.tile::before { content: ""; display: block; height: 2px; background: var(--ink); margin-bottom: 18px; transition: background .2s ease; }
+.tile:hover::before { background: var(--accent); }
 .btn, .nav-cta, body:has(p.code) .btn { border-radius: 10px; }
 .compare-before { background: var(--bg-alt); border: 1px solid var(--line); --danger: #56617c; --danger-soft: #e4eaf6; --danger-line: #c9d3e6; }
 .compare-after { background: var(--card); border: 1px solid var(--accent-line); --ok: #1d4ed8; --ok-soft: #e6edff; --ok-line: #c3d3fb; }
