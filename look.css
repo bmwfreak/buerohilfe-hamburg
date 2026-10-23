@@ -89,6 +89,27 @@ a { color: var(--accent); text-decoration-color: rgba(29,78,216,.4); text-underl
 .contact-band .btn-ghost-light:hover { background: rgba(255,255,255,.1); }
 footer { background: #070b14; }
 
+/* Barrierefreiheit und Mobil (Audit 23.10.2026) */
+:root { --ink-muted: #56617c; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.contact-band :focus-visible, footer :focus-visible { outline-color: #fff; }
+.footer-legal, .footer-legal a, .footer-contact .sep { color: #b4bfd3; }
+.footer-contact a, .footer-legal a { display: inline-flex; align-items: center; min-height: 44px; }
+.nav-links a:not(.nav-cta) { padding: 10px 4px; }
+.footer-legal nav { flex-wrap: wrap; gap: 0 20px; }
+.footer-contact { gap: 0 22px; }
+@media (max-width: 1040px) { .nav-links { gap: 14px; } .nav-links a { font-size: 14.5px; } }
+@media (max-width: 1000px) { .nav-menu-links .nav-links { display: none; } }
+.brand { min-height: 44px; }
+.case, .case > * { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+summary { min-height: 44px; display: flex; align-items: center; }
+.hero-grid > *, .hero-grid h1 { min-width: 0; }
+.hero-eyebrow { white-space: normal; max-width: 100%; line-height: 1.35; }
+.hero h1 { overflow-wrap: break-word; hyphens: auto; font-size: clamp(24px, 7.3vw, 60px); }
+@media (min-width: 640px) { .hero h1 { font-size: clamp(38px, 5.4vw, 60px); } }
+body { overflow-x: clip; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .nav-cta, .tile, .price-card { transition: none !important; } }
+
 /* Nachträge */
 p.code { color: var(--accent) !important; font-family: var(--serif); }
 .hero-chips li { color: var(--ink) !important; }
