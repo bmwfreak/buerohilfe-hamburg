@@ -116,7 +116,8 @@ footer { background: #070b14; }
 .footer-contact { gap: 0 22px; }
 @media (max-width: 1040px) { .nav-links { gap: 14px; } .nav-links a { font-size: 14.5px; } }
 @media (max-width: 1000px) { .nav-menu-links .nav-links { display: none; } }
-.brand { min-height: 44px; }
+.brand { min-height: 44px; line-height: 1.1; }
+@media (min-width: 1200px) { .brand { white-space: nowrap; } }
 .case, .case > * { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
 summary { min-height: 44px; display: flex; align-items: center; }
 .hero-grid > *, .hero-grid h1 { min-width: 0; }
