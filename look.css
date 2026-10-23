@@ -1,0 +1,88 @@
+/* Look v2: ruhig, hell, warm. Überschreibt nur Farben, Typografie, Flächen. Inhalt und Struktur bleiben. */
+:root {
+  --ink: #1d1c1a;
+  --ink-soft: #55524c;
+  --ink-muted: #7b776f;
+  --line: #e6e1d8;
+  --line-soft: #efeae1;
+  --bg: #faf8f4;
+  --bg-alt: #f3efe7;
+  --bg-alt2: #ece7dc;
+  --card: #fffdf9;
+  --hero-bg: #faf8f4;
+  --accent: #1d1c1a;
+  --accent-strong: #000;
+  --accent-soft: #efeae1;
+  --accent-line: #d9d2c4;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 0 24px 48px -28px rgba(29,28,26,.35);
+  --serif: "Charter", "Bitstream Charter", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+body { background: var(--bg); font-size: 17px; letter-spacing: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.015em; line-height: 1.12; }
+h4 { letter-spacing: -0.01em; }
+a { color: var(--ink); text-decoration-color: rgba(29,28,26,.35); text-underline-offset: 3px; }
+
+/* Kopfzeile */
+.topbar { background: rgba(250,248,244,.9); border-bottom: 1px solid var(--line); }
+.brand { font-weight: 650; letter-spacing: -0.01em; }
+.brand-mark { background: var(--ink); box-shadow: none; border-radius: 9px; }
+.nav-links a { white-space: nowrap; font-weight: 500; }
+.nav-cta { background: var(--ink); border-radius: 999px; padding: 9px 20px; }
+.nav-cta:hover { background: #000; transform: none; }
+
+/* Buttons */
+.btn { border-radius: 999px; font-weight: 600; }
+.btn-primary { background: var(--ink); color: #fff; box-shadow: none; }
+.btn-primary:hover { background: #000; transform: translateY(-1px); box-shadow: none; }
+.btn-secondary { background: transparent; border-color: #cfc8ba; color: var(--ink); }
+.btn-secondary:hover { border-color: var(--ink); transform: translateY(-1px); }
+.btn-ghost-light { background: transparent; color: var(--ink); border-color: #cfc8ba; }
+.btn-ghost-light:hover { background: var(--bg-alt); transform: translateY(-1px); }
+
+/* Hero hell statt dunkel */
+.hero { background: var(--bg); color: var(--ink-soft); padding: 96px 0 104px; }
+.hero::before { display: none; }
+.hero-eyebrow { color: var(--ink-soft); background: transparent; border: 1px solid var(--line); font-weight: 500; }
+.hero-eyebrow .dot { background: #4a7c59; animation: none; box-shadow: none; }
+.hero h1 { color: var(--ink); font-weight: 600; font-size: clamp(38px, 5.4vw, 60px); letter-spacing: -0.02em; line-height: 1.06; }
+.hero h1 .accent { color: var(--ink); font-style: italic; }
+.hero-lead { color: var(--ink-soft); }
+.hero-bullets li { color: var(--ink); }
+.hero-bullets .check { background: var(--ink); border-color: var(--ink); color: #fff; border-radius: 50%; }
+.hero-trust { color: var(--ink-muted); }
+.hero-trust svg { color: var(--ink-soft); }
+.demo video { border: 1px solid var(--line); box-shadow: var(--shadow-lg); border-radius: 18px; }
+
+/* Abschnitte */
+.section-white { background: var(--bg); }
+.section-alt { background: var(--bg-alt); border-color: var(--line); }
+.section-slate { background: var(--bg-alt2); border-color: var(--line); }
+.section-head .kicker { color: var(--ink-muted); letter-spacing: .14em; font-weight: 600; }
+.section-head h2 { font-size: clamp(30px, 4.2vw, 44px); }
+
+/* Flächen: flach, warm, keine Schatten */
+.tile, .price-card, .faq-item, .about-card, .step, .card, .feature, .why, .case, .vn-card {
+  background: var(--card); border: 1px solid var(--line); box-shadow: none; border-radius: var(--radius-lg);
+}
+.tile .t-ico { background: var(--bg-alt); color: var(--ink); border-radius: 12px; }
+.price-card { box-shadow: none; }
+.price-badge { background: var(--ink); color: #fff; }
+.price-amount .num { font-family: var(--serif); font-weight: 600; }
+.faq-item summary { font-family: var(--serif); font-size: 18px; }
+
+/* Dunkle Bänder bleiben ruhig anthrazit */
+.contact-band { background: #1d1c1a; }
+.contact-band h2 { font-family: var(--serif); font-weight: 600; }
+.contact-band .btn-primary { background: #faf8f4; color: #1d1c1a; }
+.contact-band .btn-ghost-light { color: #faf8f4; border-color: rgba(250,248,244,.35); }
+.contact-band .btn-ghost-light:hover { background: rgba(250,248,244,.1); }
+footer { background: #151412; }
+
+/* Nachträge */
+.hero-chips li { color: var(--ink) !important; }
+.hero-chips li svg { color: var(--ink-soft) !important; }
+.demo figcaption, .demo figcaption a { color: var(--ink-muted) !important; }
