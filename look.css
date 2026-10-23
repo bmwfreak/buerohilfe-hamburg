@@ -151,3 +151,24 @@ p.code { color: var(--accent) !important; font-family: var(--serif); }
 .hero-chips li { color: var(--ink) !important; }
 .hero-chips li svg { color: #7ea6ff !important; }
 .demo figcaption, .demo figcaption a { color: var(--ink-muted) !important; }
+
+/* Kritik 23.10.2026, Umfang nur CSS: Überschrift, offene Spalten, flacher Kopf, Marken-Radius, Browser-Details */
+.hero h1 { font-size: clamp(26px, 3.3vw, 48px); hyphens: manual; overflow-wrap: normal; text-wrap: balance; }
+@media (min-width: 640px) and (max-width: 939px) { .hero h1 { font-size: clamp(34px, 6vw, 48px); } }
+@media (max-width: 639px) { .hero h1 { font-size: clamp(21px, 7vw, 34px); } }
+.hero { background: #0b1220; }
+.hero-eyebrow { background: none; border: 0; padding: 0; border-radius: 0; color: #9fb0cc; font-weight: 500; }
+.hero-eyebrow .dot { display: none; }
+.hero .hero-chips { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.hero .hero-chips li { background: none; border: 0; padding: 0; box-shadow: none; width: auto; }
+.tile-grid { gap: 30px 36px; }
+.tile { background: transparent; border: 0; border-top: 2px solid var(--ink); border-radius: 0; padding: 18px 0 0; }
+.tile:hover { border-color: transparent; border-top-color: var(--accent); }
+.btn, .nav-cta, body:has(p.code) .btn { border-radius: 10px; }
+.compare-before { background: var(--bg-alt); border: 1px solid var(--line); --danger: #56617c; --danger-soft: #e4eaf6; --danger-line: #c9d3e6; }
+.compare-after { background: var(--card); border: 1px solid var(--accent-line); --ok: #1d4ed8; --ok-soft: #e6edff; --ok-line: #c3d3fb; }
+::selection { background: #1d4ed8; color: #fff; }
+:root { caret-color: #1d4ed8; scrollbar-color: #1d4ed8 #edf1f9; }
+.price-amount .num, .bs-num, .compare-stat b { font-variant-numeric: tabular-nums; }
+p, li { text-wrap: pretty; }
+h2, h3 { text-wrap: balance; }
