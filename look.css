@@ -1,91 +1,96 @@
-/* Look v2: ruhig, hell, warm. Überschreibt nur Farben, Typografie, Flächen. Inhalt und Struktur bleiben. */
+/* Look v2: ruhig und hell, mit Schwarz und dem dunklen Blau des Logos als Akzent. Überschreibt nur Farben, Typografie, Flächen. Inhalt und Struktur bleiben. */
 @font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 200 900; font-display: swap; src: url("/fonts/source-serif-4-latin-wght-normal.woff2") format("woff2"); }
 @font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 200 900; font-display: swap; src: url("/fonts/source-serif-4-latin-wght-italic.woff2") format("woff2"); }
 :root {
-  --ink: #1d1c1a;
-  --ink-soft: #55524c;
-  --ink-muted: #7b776f;
-  --line: #e6e1d8;
-  --line-soft: #efeae1;
-  --bg: #faf8f4;
-  --bg-alt: #f3efe7;
-  --bg-alt2: #ece7dc;
-  --card: #fffdf9;
-  --hero-bg: #faf8f4;
-  --accent: #1d1c1a;
-  --accent-strong: #000;
-  --accent-soft: #efeae1;
-  --accent-line: #d9d2c4;
+  --ink: #0b1220;
+  --ink-soft: #46506a;
+  --ink-muted: #6b7691;
+  --line: #dde4f0;
+  --line-soft: #e9eef7;
+  --bg: #f7f9fd;
+  --bg-alt: #edf1f9;
+  --bg-alt2: #e4eaf6;
+  --card: #ffffff;
+  --hero-bg: #f7f9fd;
+  --accent: #1d4ed8;          /* dunkles Blau aus dem Logo */
+  --accent-strong: #1e3fae;
+  --accent-soft: #e6edff;
+  --accent-line: #c3d3fb;
+  --navy: #0b1220;
   --radius: 14px;
   --radius-lg: 18px;
   --shadow-sm: none;
   --shadow-md: none;
-  --shadow-lg: 0 24px 48px -28px rgba(29,28,26,.35);
+  --shadow-lg: 0 24px 48px -28px rgba(11,18,32,.45);
   --serif: "Source Serif 4", "Charter", "Bitstream Charter", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
 }
 body { background: var(--bg); font-size: 17px; letter-spacing: 0; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.015em; line-height: 1.12; }
 h4 { letter-spacing: -0.01em; }
-a { color: var(--ink); text-decoration-color: rgba(29,28,26,.35); text-underline-offset: 3px; }
+a { color: var(--accent); text-decoration-color: rgba(29,78,216,.4); text-underline-offset: 3px; }
 
-/* Kopfzeile */
-.topbar { background: rgba(250,248,244,.9); border-bottom: 1px solid var(--line); }
-.brand { font-weight: 650; letter-spacing: -0.01em; }
-.brand-mark { background: var(--ink); box-shadow: none; border-radius: 9px; }
+/* Kopfzeile: Logo schwarz, Knopf blau */
+.topbar { background: rgba(247,249,253,.92); border-bottom: 1px solid var(--line); }
+.brand { font-weight: 650; letter-spacing: -0.01em; color: var(--ink); }
+.brand-mark { background: #000; box-shadow: none; border-radius: 9px; }
 .nav-links a { white-space: nowrap; font-weight: 500; }
-.nav-cta { background: var(--ink); border-radius: 999px; padding: 9px 20px; }
-.nav-cta:hover { background: #000; transform: none; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { background: var(--accent); border-radius: 999px; padding: 9px 20px; }
+.nav-cta:hover { background: var(--accent-strong); transform: none; }
 
 /* Buttons */
 .btn { border-radius: 999px; font-weight: 600; }
-.btn-primary { background: var(--ink); color: #fff; box-shadow: none; }
-.btn-primary:hover { background: #000; transform: translateY(-1px); box-shadow: none; }
-.btn-secondary { background: transparent; border-color: #cfc8ba; color: var(--ink); }
-.btn-secondary:hover { border-color: var(--ink); transform: translateY(-1px); }
-.btn-ghost-light { background: transparent; color: var(--ink); border-color: #cfc8ba; }
-.btn-ghost-light:hover { background: var(--bg-alt); transform: translateY(-1px); }
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 10px 22px -12px rgba(29,78,216,.7); }
+.btn-primary:hover { background: var(--accent-strong); transform: translateY(-1px); box-shadow: 0 14px 26px -12px rgba(29,78,216,.7); }
+.btn-secondary { background: transparent; border-color: #b9c6e2; color: var(--ink); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.btn-ghost-light { background: transparent; color: var(--ink); border-color: #b9c6e2; }
+.btn-ghost-light:hover { background: var(--accent-soft); border-color: var(--accent); transform: translateY(-1px); }
 
-/* Hero hell statt dunkel */
-.hero { background: var(--bg); color: var(--ink-soft); padding: 96px 0 104px; }
+/* Hero: hell, mit blauem Verlauf und blauem Akzent */
+.hero { background: radial-gradient(900px 420px at 88% -8%, rgba(29,78,216,.14), transparent 62%), var(--bg); color: var(--ink-soft); padding: 96px 0 104px; }
 .hero::before { display: none; }
-.hero-eyebrow { color: var(--ink-soft); background: transparent; border: 1px solid var(--line); font-weight: 500; }
-.hero-eyebrow .dot { background: #4a7c59; animation: none; box-shadow: none; }
+.hero-eyebrow { color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); font-weight: 600; }
+.hero-eyebrow .dot { background: var(--accent); animation: none; box-shadow: none; }
 .hero h1 { color: var(--ink); font-weight: 600; font-size: clamp(38px, 5.4vw, 60px); letter-spacing: -0.02em; line-height: 1.06; }
-.hero h1 .accent { color: var(--ink); font-style: italic; }
+.hero h1 .accent { color: var(--accent); font-style: italic; }
 .hero-lead { color: var(--ink-soft); }
 .hero-bullets li { color: var(--ink); }
-.hero-bullets .check { background: var(--ink); border-color: var(--ink); color: #fff; border-radius: 50%; }
+.hero-bullets .check { background: var(--accent); border-color: var(--accent); color: #fff; border-radius: 50%; }
 .hero-trust { color: var(--ink-muted); }
-.hero-trust svg { color: var(--ink-soft); }
+.hero-trust svg { color: var(--accent); }
 .demo video { border: 1px solid var(--line); box-shadow: var(--shadow-lg); border-radius: 18px; }
 
 /* Abschnitte */
 .section-white { background: var(--bg); }
 .section-alt { background: var(--bg-alt); border-color: var(--line); }
 .section-slate { background: var(--bg-alt2); border-color: var(--line); }
-.section-head .kicker { color: var(--ink-muted); letter-spacing: .14em; font-weight: 600; }
+.section-head .kicker { color: var(--accent); letter-spacing: .14em; font-weight: 700; }
 .section-head h2 { font-size: clamp(30px, 4.2vw, 44px); }
 
-/* Flächen: flach, warm, keine Schatten */
+/* Flächen: flach, weiß, feine blaugraue Linie */
 .tile, .price-card, .faq-item, .about-card, .step, .card, .feature, .why, .case, .vn-card {
   background: var(--card); border: 1px solid var(--line); box-shadow: none; border-radius: var(--radius-lg);
 }
-.tile .t-ico { background: var(--bg-alt); color: var(--ink); border-radius: 12px; }
-.price-card { box-shadow: none; }
-.price-badge { background: var(--ink); color: #fff; }
-.price-amount .num { font-family: var(--serif); font-weight: 600; }
+.tile .t-ico { background: var(--accent-soft); color: var(--accent); border-radius: 12px; }
+.tile:hover, .price-card:hover { border-color: var(--accent-line); }
+.price-badge { background: var(--accent); color: #fff; }
+.price-amount .num { font-family: var(--serif); font-weight: 600; color: var(--ink); }
+.price-card li .ck { color: var(--accent); }
 .faq-item summary { font-family: var(--serif); font-size: 18px; }
+.faq-item summary .chev { color: var(--accent); }
 
-/* Dunkle Bänder bleiben ruhig anthrazit */
-.contact-band { background: #1d1c1a; }
+/* Dunkle Bänder: Schwarzblau */
+.contact-band { background: radial-gradient(700px 300px at 85% -20%, rgba(59,110,240,.35), transparent 65%), var(--navy); }
 .contact-band h2 { font-family: var(--serif); font-weight: 600; }
-.contact-band .btn-primary { background: #faf8f4; color: #1d1c1a; }
-.contact-band .btn-ghost-light { color: #faf8f4; border-color: rgba(250,248,244,.35); }
-.contact-band .btn-ghost-light:hover { background: rgba(250,248,244,.1); }
-footer { background: #151412; }
+.contact-band .btn-primary { background: #fff; color: var(--navy); box-shadow: none; }
+.contact-band .btn-primary:hover { background: #e6edff; }
+.contact-band .btn-ghost-light { color: #fff; border-color: rgba(255,255,255,.35); }
+.contact-band .btn-ghost-light:hover { background: rgba(255,255,255,.1); }
+footer { background: #070b14; }
 
 /* Nachträge */
-p.code { color: var(--ink-muted) !important; font-family: var(--serif); }
+p.code { color: var(--accent) !important; font-family: var(--serif); }
 .hero-chips li { color: var(--ink) !important; }
-.hero-chips li svg { color: var(--ink-soft) !important; }
+.hero-chips li svg { color: var(--accent) !important; }
 .demo figcaption, .demo figcaption a { color: var(--ink-muted) !important; }
