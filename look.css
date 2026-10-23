@@ -110,6 +110,26 @@ summary { min-height: 44px; display: flex; align-items: center; }
 body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .nav-cta, .tile, .price-card { transition: none !important; } }
 
+/* Impeccable-Detektor (23.10.2026) */
+.tile .t-ico, .big-step .bs-ico, .t-ico, .bs-ico { background: transparent; border-radius: 0; width: auto; height: auto; justify-content: flex-start; margin-bottom: 14px; }
+.tile .t-ico svg, .big-step .bs-ico svg { width: 30px; height: 30px; }
+.big-step .bs-num, .bs-num { color: #6f8fe6; }
+.shot-frame, .shot-frame * { --ink: #f8fafc; --ink-soft: #cbd5e1; --ink-muted: #9fb0cc; }
+.contact-band { background: var(--navy); border-top: 1px solid rgba(255,255,255,.08); }
+.hero h1 .accent { font-style: normal; }
+.compare-before { border: 1px solid #f0b8b8; background: #fffafa; }
+.compare-after { border: 1px solid #a9e2cf; background: #fafffd; }
+.audit-card, .shot-frame { box-shadow: 0 24px 48px -28px rgba(11,18,32,.45); }
+.btn-primary, .brand-mark, .nav-cta { box-shadow: none; }
+.btn-primary { box-shadow: 0 10px 22px -14px rgba(11,18,32,.6); }
+
+/* 404: hell wie der Rest (die Seite hatte einen dunklen Eigenstil) */
+body:has(p.code) { background: radial-gradient(900px 400px at 80% -10%, rgba(29,78,216,.12), transparent 60%), var(--bg); color: var(--ink-soft); }
+body:has(p.code) h1 { color: var(--ink); font-family: var(--serif); font-weight: 600; letter-spacing: -0.015em; }
+body:has(p.code) .btn { border-radius: 999px; }
+body:has(p.code) .btn-ghost { background: transparent; color: var(--ink); border-color: #b9c6e2; }
+body:has(p.code) .btn-ghost:hover { background: var(--accent-soft); }
+
 /* Nachträge */
 p.code { color: var(--accent) !important; font-family: var(--serif); }
 .hero-chips li { color: var(--ink) !important; }
