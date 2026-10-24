@@ -186,3 +186,34 @@ h2, h3 { text-wrap: balance; }
 #referenz .quote-id b { font-size: 16px; }
 #referenz .quote-id span { font-size: 14px; }
 .contact-band .contact-fine { margin: 36px auto 0; line-height: 1.5; }@media (max-width: 360px) { .hero h1 { font-size: 20px; } }
+
+/* Runde 2 nach Kritik (24.10.2026): Rhythmus, Hierarchie, offene Spalten, keine Pillen */
+.section-head h2 { font-size: clamp(19px, 6vw, 30px); }
+@media (min-width: 640px) { .section-head h2 { font-size: clamp(26px, 2.6vw, 36px); } }
+.section-slate { background: var(--bg-alt); }
+.section-white, .section-alt, .section-slate { padding-block: clamp(56px, 7vw, 96px); }
+.section-white + .section-white, .section-alt + .section-white, .section-white + .section-alt { border-top: 1px solid var(--line); }
+.tile-head { font-size: 20px; margin: 48px 0 20px; }
+.faq-list { margin-inline: 0; max-width: 62ch; }
+.faq-item { background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; box-shadow: none; }
+.big-step, .price-card:not(.featured), .about-card { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.big-step::before, .price-card:not(.featured)::before { content: ""; display: block; height: 2px; background: var(--ink); margin-bottom: 22px; }
+.price-card:not(.featured) { padding-inline: 4px; }
+.big-step { padding: 2px 4px 0; }
+.big-step .bs-num { color: var(--accent); top: 24px; right: 4px; }
+.about-card { padding: 0; }
+.price-badge, .compare-card .tag { border-radius: 6px; box-shadow: none; }
+.nav-cta { border-radius: 10px; }
+.about-avatar { box-shadow: none; }
+.ck, .check, .compare-card li .ic { background: none; border: 0; border-radius: 0; }
+.compare-mid .arrow { background: none; border: 0; border-radius: 0; box-shadow: none; color: var(--accent); width: auto; height: auto; font-size: 30px; }
+.btn-primary:hover { background: #1e3fae; }
+.hero .btn-primary:hover { background: #3b66ec; }
+@media (max-width: 639px) { .hero { padding-bottom: 40px; } }
+/* Dunkle Bühne: Die Anwendung in drei Bildern */
+#anwendung { --ink: #f5f8ff; --ink-soft: #c5d0e6; --ink-muted: #9fb0cc; background: var(--navy); border-top: 0; }
+#anwendung .section-head h2, #anwendung h3 { color: #fff; }
+#anwendung .shot { background: transparent; border: 0; box-shadow: none; border-radius: 0; overflow: visible; }
+#anwendung .shot-frame { border: 1px solid rgba(126,166,255,.28); border-radius: 16px; overflow: hidden; }
+#anwendung summary, #anwendung a:not(.btn) { color: #9db9ff; }
+#anwendung :focus-visible { outline-color: #fff; }
