@@ -488,9 +488,6 @@
     position: relative; display: grid; gap: 56px; align-items: center;
     grid-template-columns: 1fr;
   }
-  @media (min-width: 940px) {
-    .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 48px; }
-  }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
     font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
@@ -840,7 +837,7 @@
   }
 
   /* Ablauf-Beispiel (Reel als Erklaerung) */
-  .flow-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:56px;align-items:center;max-width:960px;margin:0 auto}
+  .flow-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:56px;align-items:center;max-width:720px;margin:0 auto}
   .flow-video{margin:0}
   .flow-video video{width:100%;height:auto;aspect-ratio:9/16;border-radius:20px;background:var(--hero-bg);display:block;object-fit:contain}
   /* Vollbild: nie zuschneiden, immer ganz zeigen (Hochformat auf dem Handy) */
@@ -912,7 +909,6 @@
   .more-center summary{font-size:18px}
   @media (max-width: 900px){.pricing.price3,.pricing.price2{grid-template-columns:1fr}}
 </style>
-<script src="/demo.js" defer></script>
 <script src="/lightbox-v1.js" defer></script>
 <link rel="stylesheet" href="/look.css?v=14">
 </head>
@@ -967,19 +963,6 @@
           </a>
         </div>
         </div>
-
-      <!-- Demo-Video: selbst gehostet, keine Drittanbieter -->
-      <figure id="demo" class="demo reveal-up d3">
-        <div class="demo-frame">
-        <video controls preload="none" playsinline width="1920" height="1080" poster="/media/demo-poster.jpg"
-               aria-label="Demo-Video: Rechnungen prüfen statt abtippen">
-          <source src="/media/demo-belegerfassung.mp4" type="video/mp4">
-          <track kind="captions" src="/media/demo.vtt" srclang="de" label="Deutsch">
-        </video>
-        <button type="button" class="demo-play" aria-label="Demo-Video abspielen"></button>
-        </div>
-        <figcaption>Demo · KI-Sprecherstimme</figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -992,73 +975,6 @@
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           Keine Pauschalzahl: Die Anwendung erfasst Bearbeitungszeit und Kosten je Beleg, damit ihr mit eurem bisherigen Aufwand vergleichen könnt.
         </div></div></details><p class="tile-head">Warum ihr den Zahlen trauen könnt</p><div class="tile-grid"><div class="tile"><span class="t-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span><h4>Fundstelle zu jedem Wert</h4><p>Ausschnitt aus dem Original, mit Seitenzahl</p></div><div class="tile"><span class="t-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke-dasharray="3 3"/><path d="M8 12h8"/></svg></span><h4>Unklares bleibt offen</h4><p>Lieber eine Lücke als ein falscher Wert</p></div><div class="tile"><span class="t-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg></span><h4>Es rechnet nach</h4><p>Netto plus Steuer gegen Brutto geprüft</p></div></div><details class="more"><summary>Mehr dazu</summary><div class="more-body"><p><b>Fundstelle zu jedem Wert</b> Neben jeder Angabe steht der Ausschnitt aus eurem Originalbeleg, mit Seitenzahl. Ihr müsst nicht glauben, dass der Betrag stimmt, ihr seht die Stelle, aus der er kommt.</p><p><b>Unklares bleibt offen</b> Findet das Werkzeug zwei mögliche Treffer, entscheidet es nicht. Das Feld bleibt leer und wird als prüfpflichtig markiert. Lieber eine Lücke, die auffällt, als eine falsche Zahl, die niemand bemerkt.</p><p><b>Es rechnet nach</b> Netto plus Steuer wird gegen den gedruckten Bruttobetrag geprüft. Stimmt es nicht, gibt es einen Hinweis. Sind die Summen nicht eindeutig lesbar, steht dort ausdrücklich „nicht geprüft“ statt eines stillen Häkchens.</p></div></details><p class="tile-head">Auch das lässt sich automatisieren</p><div class="tile-grid"><div class="tile"><span class="t-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><h4>Zuordnung in der Hausverwaltung</h4><p>Objekt, Einheit, Kostenart</p></div><div class="tile"><span class="t-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h4>Excel-Konsolidierung</h4><p>Mehrere Listen, eine Wochenübersicht</p></div><div class="tile"><span class="t-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><h4>E-Mail-Protokoll</h4><p>Eingangsmails als Liste mit Status</p></div><div class="tile"><span class="t-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span><h4>Individuell</h4><p>Spezialfälle nach schriftlicher Schätzung</p></div></div><details class="more"><summary>Mehr dazu</summary><div class="more-body"><p><b>Zuordnung in der Hausverwaltung</b> Welches Objekt, welche Einheit, welche Kostenart, umlagefähig oder nicht. Diese Zuordnung nimmt euch kein Steuerberater ab und keine Standardsoftware zuverlässig. Genau dort setzt der Ausbau an.</p><p><b>Excel-Konsolidierung</b> Mehrere Listen automatisch zu einer Wochenübersicht zusammenführen, inkl. Auffälligkeits-Markierung.</p><p><b>E-Mail-Protokoll</b> Eingangsmails als strukturierte Excel-Liste: Absender, Thema, Kategorie, Status.</p><p><b>Individuell</b> Spezialfälle und mehrere verknüpfte Quellen — nach schriftlicher Aufwandsschätzung.</p></div></details>
-  </div>
-</section>
-
-<!-- ANWENDUNG -->
-<section id="anwendung" class="section-white">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">So sieht es aus</span>
-      <h2>Die Anwendung in drei Bildern</h2>
-      <p>Prüfen am Original, nichts geraten, erst nach Freigabe raus.</p>
-    </div>
-    <div class="shots"><figure class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><div class="shot-frame"><a href="/media/app-pruefung.jpg"><img src="/media/app-pruefung.jpg" alt="Prüfansicht der Anwendung: Rechnung links mit farbig markierten Feldern, rechts die ausgelesenen Werte" width="1500" height="855" loading="lazy"></a><div class="pin" style="left:4%;top:40%"><b>1</b><span>Im Original markiert</span></div><div class="pin" style="left:52%;top:61%"><b>2</b><span>Jedes Feld einzeln</span></div></div><figcaption><h3>Jeder Wert im Original markiert</h3><p>Farbe im Beleg, gleiche Farbe im Feld</p><ul class="legend"><li><b>1</b>Im Original markiert</li><li><b>2</b>Jedes Feld einzeln</li></ul></figcaption></figure><figure class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><div class="shot-frame"><a href="/media/app-unklar.jpg"><img src="/media/app-unklar.jpg" alt="Anwendung zeigt einen Hinweis und lässt ein unsicheres Feld leer" width="1500" height="855" loading="lazy"></a><div class="pin" style="left:52%;top:22%"><b>1</b><span>Hinweis</span></div><div class="pin" style="left:52%;top:69%"><b>2</b><span>Bleibt leer</span></div></div><figcaption><h3>Unsicheres bleibt leer</h3><p>Hinweis statt geratenem Wert</p><ul class="legend"><li><b>1</b>Hinweis</li><li><b>2</b>Bleibt leer</li></ul></figcaption></figure><figure class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><div class="shot-frame"><a href="/media/app-freigabe.jpg"><img src="/media/app-freigabe.jpg" alt="Freigabe und Liste der freigegebenen Rechnungen" width="1500" height="855" loading="lazy"></a><div class="pin" style="left:52%;top:46%"><b>1</b><span>Ihr hakt ab</span></div><div class="pin" style="left:52%;top:94%"><b>2</b><span>Erst dann Liste</span></div></div><figcaption><h3>Erst nach eurer Freigabe</h3><p>Dann geht die Liste als CSV raus</p><ul class="legend"><li><b>1</b>Ihr hakt ab</li><li><b>2</b>Erst dann Liste</li></ul></figcaption></figure></div>
-  </div>
-</section>
-
-<!-- ABLAUF-BEISPIEL -->
-<section id="ablauf" class="section-white">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">So sieht es aus</span>
-      <h2>Zwölf Rechnungen in drei Schritten</h2>
-      <p>Ein Durchlauf in zwölf Sekunden. Die Anwendung schlägt Werte vor, ihr prüft am Original und gebt frei.</p>
-    </div>
-    <div class="flow-grid">
-      <figure class="flow-video">
-        <video controls preload="none" playsinline width="1080" height="1920" poster="/media/ablauf-beispiel-poster.jpg"
-               aria-label="Beispiel: Zwölf Rechnungen werden ausgelesen, geprüft und freigegeben">
-          <source src="/media/ablauf-beispiel.mp4" type="video/mp4">
-        </video>
-      </figure>
-      <div>
-        <div class="wf-side">
-          <div class="wf-step"><span class="num">1</span><span class="lbl"><b>Rechnungen rein</b><span>Als PDF, Scan oder Foto in einen Ordner legen oder ins Fenster ziehen</span></span></div>
-          <div class="wf-step"><span class="num">2</span><span class="lbl"><b>Werte stehen in der Liste</b><span>Lieferant, Nummer, Datum, Netto, Steuer, Brutto. Passt eine Rechnung rechnerisch nicht, wird die Differenz markiert</span></span></div>
-          <div class="wf-step"><span class="num">3</span><span class="lbl"><b>Ihr gebt frei</b><span>Jede Zeile prüft ihr am Original. Erst nach der Freigabe geht die Liste als Excel oder CSV raus</span></span></div>
-        </div>
-        <div class="flow-cta"><a href="tel:+491736762711" class="btn btn-primary">Mit euren eigenen Belegen ansehen? Ruf an</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BUCHUNG ZU RECHNUNGSENTWURF -->
-<section id="buchung" class="section-white">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Zwei Programme, ein Ablauf</span>
-      <h2>Termin gebucht. Rechnungsentwurf steht.</h2>
-      <p>Die Buchung legt den Entwurf selbst an. Ihr prüft und gebt frei.</p>
-    </div>
-    <div class="flow-grid">
-      <figure class="flow-video">
-        <video controls preload="none" playsinline width="1080" height="1920" poster="/media/buchung-rechnungsentwurf-poster.jpg"
-               aria-label="Eine Terminbuchung legt in der Buchhaltung automatisch einen Rechnungsentwurf an, der Mensch prüft und gibt frei">
-          <source src="/media/buchung-rechnungsentwurf.mp4" type="video/mp4">
-        </video>
-      </figure>
-      <div>
-        <div class="wf-side">
-          <div class="wf-step"><span class="num">1</span><span class="lbl"><b>Buchung kommt rein</b><span>Kunde, Termin und Leistung stehen schon im Terminprogramm</span></span></div>
-          <div class="wf-step"><span class="num">2</span><span class="lbl"><b>Entwurf entsteht</b><span>Die Positionen landen als Rechnungsentwurf in der Buchhaltung, nichts wird abgetippt</span></span></div>
-          <div class="wf-step"><span class="num">3</span><span class="lbl"><b>Ihr gebt frei</b><span>Ihr prüft den Entwurf. Erst nach eurer Freigabe geht eine Rechnung raus</span></span></div>
-        </div>
-        <div class="flow-cta"><a href="tel:+491736762711" class="btn btn-primary">Euer Terminprogramm dabei? Ruf an</a></div>
-      </div>
-    </div>
-    <details class="more"><summary>So funktioniert die Verbindung im Detail</summary><div class="more-body"><p>Meldet euer Terminprogramm eine neue Buchung, legt die Verbindung in der Buchhaltung einen Rechnungsentwurf mit den passenden Positionen an. Aufgebaut und mit eigenen Testkonten erprobt haben wir das mit eTermin und Lexware. Der Entwurf wird nie automatisch verschickt: Ihr seht ihn, prüft ihn und gebt ihn selbst frei.</p><p>Ob das bei euch geht, hängt von euren Programmen ab. Es braucht eine Schnittstelle, die euer Anbieter freischaltet, je nach Tarif. Das klären wir vor einer Zusage mit euren Programmen. Eine Anbindung an DATEV gehört nicht dazu.</p></div></details>
   </div>
 </section>
 
