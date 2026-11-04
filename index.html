@@ -488,9 +488,6 @@
     position: relative; display: grid; gap: 56px; align-items: center;
     grid-template-columns: 1fr;
   }
-  @media (min-width: 940px) {
-    .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 48px; }
-  }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
     font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
@@ -840,7 +837,7 @@
   }
 
   /* Ablauf-Beispiel (Reel als Erklaerung) */
-  .flow-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:56px;align-items:center;max-width:960px;margin:0 auto}
+  .flow-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:56px;align-items:center;max-width:720px;margin:0 auto}
   .flow-video{margin:0}
   .flow-video video{width:100%;height:auto;aspect-ratio:9/16;border-radius:20px;background:var(--hero-bg);display:block;object-fit:contain}
   /* Vollbild: nie zuschneiden, immer ganz zeigen (Hochformat auf dem Handy) */
@@ -912,7 +909,6 @@
   .more-center summary{font-size:18px}
   @media (max-width: 900px){.pricing.price3,.pricing.price2{grid-template-columns:1fr}}
 </style>
-<script src="/demo.js" defer></script>
 <script src="/lightbox-v1.js" defer></script>
 <link rel="stylesheet" href="/look.css?v=14">
 </head>
@@ -967,19 +963,6 @@
           </a>
         </div>
         </div>
-
-      <!-- Demo-Video: selbst gehostet, keine Drittanbieter -->
-      <figure id="demo" class="demo reveal-up d3">
-        <div class="demo-frame">
-        <video controls preload="none" playsinline width="1920" height="1080" poster="/media/demo-poster.jpg"
-               aria-label="Demo-Video: Rechnungen prüfen statt abtippen">
-          <source src="/media/demo-belegerfassung.mp4" type="video/mp4">
-          <track kind="captions" src="/media/demo.vtt" srclang="de" label="Deutsch">
-        </video>
-        <button type="button" class="demo-play" aria-label="Demo-Video abspielen"></button>
-        </div>
-        <figcaption>Demo · KI-Sprecherstimme</figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -1016,12 +999,6 @@
       <p>Ein Durchlauf in zwölf Sekunden. Die Anwendung schlägt Werte vor, ihr prüft am Original und gebt frei.</p>
     </div>
     <div class="flow-grid">
-      <figure class="flow-video">
-        <video controls preload="none" playsinline width="1080" height="1920" poster="/media/ablauf-beispiel-poster.jpg"
-               aria-label="Beispiel: Zwölf Rechnungen werden ausgelesen, geprüft und freigegeben">
-          <source src="/media/ablauf-beispiel.mp4" type="video/mp4">
-        </video>
-      </figure>
       <div>
         <div class="wf-side">
           <div class="wf-step"><span class="num">1</span><span class="lbl"><b>Rechnungen rein</b><span>Als PDF, Scan oder Foto in einen Ordner legen oder ins Fenster ziehen</span></span></div>
@@ -1031,34 +1008,6 @@
         <div class="flow-cta"><a href="tel:+491736762711" class="btn btn-primary">Mit euren eigenen Belegen ansehen? Ruf an</a></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- BUCHUNG ZU RECHNUNGSENTWURF -->
-<section id="buchung" class="section-white">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Zwei Programme, ein Ablauf</span>
-      <h2>Termin gebucht. Rechnungsentwurf steht.</h2>
-      <p>Die Buchung legt den Entwurf selbst an. Ihr prüft und gebt frei.</p>
-    </div>
-    <div class="flow-grid">
-      <figure class="flow-video">
-        <video controls preload="none" playsinline width="1080" height="1920" poster="/media/buchung-rechnungsentwurf-poster.jpg"
-               aria-label="Eine Terminbuchung legt in der Buchhaltung automatisch einen Rechnungsentwurf an, der Mensch prüft und gibt frei">
-          <source src="/media/buchung-rechnungsentwurf.mp4" type="video/mp4">
-        </video>
-      </figure>
-      <div>
-        <div class="wf-side">
-          <div class="wf-step"><span class="num">1</span><span class="lbl"><b>Buchung kommt rein</b><span>Kunde, Termin und Leistung stehen schon im Terminprogramm</span></span></div>
-          <div class="wf-step"><span class="num">2</span><span class="lbl"><b>Entwurf entsteht</b><span>Die Positionen landen als Rechnungsentwurf in der Buchhaltung, nichts wird abgetippt</span></span></div>
-          <div class="wf-step"><span class="num">3</span><span class="lbl"><b>Ihr gebt frei</b><span>Ihr prüft den Entwurf. Erst nach eurer Freigabe geht eine Rechnung raus</span></span></div>
-        </div>
-        <div class="flow-cta"><a href="tel:+491736762711" class="btn btn-primary">Euer Terminprogramm dabei? Ruf an</a></div>
-      </div>
-    </div>
-    <details class="more"><summary>So funktioniert die Verbindung im Detail</summary><div class="more-body"><p>Meldet euer Terminprogramm eine neue Buchung, legt die Verbindung in der Buchhaltung einen Rechnungsentwurf mit den passenden Positionen an. Aufgebaut und mit eigenen Testkonten erprobt haben wir das mit eTermin und Lexware. Der Entwurf wird nie automatisch verschickt: Ihr seht ihn, prüft ihn und gebt ihn selbst frei.</p><p>Ob das bei euch geht, hängt von euren Programmen ab. Es braucht eine Schnittstelle, die euer Anbieter freischaltet, je nach Tarif. Das klären wir vor einer Zusage mit euren Programmen. Eine Anbindung an DATEV gehört nicht dazu.</p></div></details>
   </div>
 </section>
 
