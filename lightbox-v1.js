@@ -1,7 +1,7 @@
 (function () {
   var dlg = document.getElementById('lightbox');
   if (!dlg || typeof dlg.showModal !== 'function') return;
-  var img = dlg.querySelector('img');
+  var img = dlg.querySelector('img') || dlg.appendChild(document.createElement('img'));
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('.shot-frame a');
     if (!a) return;
