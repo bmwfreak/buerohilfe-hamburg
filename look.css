@@ -217,3 +217,17 @@ h2, h3 { text-wrap: balance; }
 #anwendung .shot-frame { border: 1px solid rgba(126,166,255,.28); border-radius: 16px; overflow: hidden; }
 #anwendung summary, #anwendung a:not(.btn) { color: #9db9ff; }
 #anwendung :focus-visible { outline-color: #fff; }
+
+/* Polish 12.11.2026: weniger Vorlage, mehr Werkzeug. Keine Icon-Reihen, keine Initialen-Kreise, kein farbiges Wort, keine Trennpunkte. */
+html { overflow-x: clip; }
+.tile .t-ico, .big-step .bs-ico { display: none; }
+.compare-card li .ic { display: none; }
+.about-avatar { display: none; }
+.footer-contact .sep { display: none; }
+.hero h1 .accent { color: inherit; }
+.btn:active, .nav-cta:active { transform: none; }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
+.hero-eyebrow { letter-spacing: 0; text-transform: none; }
+.hero-chips li svg { display: none !important; }
+.compare-card .tag, .price-badge { text-transform: none; letter-spacing: 0; font-weight: 600; }
+.about-text .kicker { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
