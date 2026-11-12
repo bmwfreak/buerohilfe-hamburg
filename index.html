@@ -907,7 +907,7 @@
 <script defer="" src="/lightbox-v1.js"></script>
 <link href="/look.css?v=15" rel="stylesheet"/>
 <link rel="preload" href="fonts/jost-redesign.ttf" as="font" type="font/ttf" crossorigin />
-<link rel="stylesheet" href="redesign.css" />
+<link rel="stylesheet" href="redesign.css?v=20261112-2" />
 </head>
 <body class="sa-home">
 <dialog aria-label="Vergrößerte Ansicht" class="lb" id="lightbox"><button aria-label="Schließen" class="lb-close" type="button">✕</button></dialog>
@@ -1211,8 +1211,6 @@
 </div>
 </footer>
 <dialog id="make-detail" class="make-dialog" aria-labelledby="make-detail-title"><div class="make-dialog-head"><h2 id="make-detail-title">eTermin mit Lexware verbinden</h2><button type="button" class="btn make-proof-close">Schließen</button></div><p>Zum Lesen der Module seitlich scrollen.</p><div class="make-detail-scroll" tabindex="0" role="region" aria-label="Make-Ablauf, horizontal scrollbar"><div class="make-proof-crop"><img src="/media/make-buchung-scharf.png" width="1870" height="397" alt="Make-Szenario: Webhook, Text parser, Array aggregator und HTTP." /></div></div></dialog>
-<script>
-(()=>{const dialog=document.querySelector('#make-detail');const trigger=document.querySelector('.make-proof-open');trigger.addEventListener('click',()=>dialog.showModal());dialog.querySelector('.make-proof-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog){const box=dialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)dialog.close();}});})();
-</script>
+<script src="/make-demo.js?v=1" defer></script>
 </body>
 </html>
