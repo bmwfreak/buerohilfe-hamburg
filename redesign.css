@@ -114,3 +114,5 @@ body :focus-visible{outline:3px solid var(--sa-ink)!important;outline-offset:5px
 @media(max-width:760px){.hero-written{flex-basis:100%;justify-content:center}.workflow-comparison-block{margin-top:32px;padding-top:24px}.workflow-comparison-block h3{font-size:25px}}
 
 footer p a{text-decoration:underline;text-underline-offset:4px}
+
+.hero-orientation{font-size:15px;line-height:1.5;margin:20px 0 0;color:var(--sa-muted);max-width:64ch}.hero-orientation a{text-decoration:underline}
