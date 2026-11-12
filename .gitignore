@@ -12,3 +12,6 @@ Thumbs.db
 
 # Legacy: Netlify CLI (Repo wird zu Cloudflare migriert)
 .netlify/
+
+# Local design audits and screenshots
+.hallmark/
