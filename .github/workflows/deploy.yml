@@ -16,4 +16,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 5503b8cdde7230f2c7e8d6f3c8326a1a
-          command: pages deploy . --project-name=buerohilfe --branch=main
+          command: pages deploy . --project-name=systemic-automation --branch=main
